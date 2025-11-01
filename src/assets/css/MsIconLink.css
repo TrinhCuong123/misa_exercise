@@ -1,0 +1,59 @@
+.icon-link {
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 24px;
+  height: 24px;
+}
+
+.icon-logo {
+  background-image: url('../icons/icon-users.svg');
+  width: 32px;
+  height: 32px;
+}
+
+.icon-switch {
+  background-image: url('../icons/icon-switch.svg');
+}
+
+.icon-notifi {
+  background-image: url('../icons/icon-notifi.svg');
+}
+.icon-cart {
+  background-image: url('../icons/icon-cart.svg');
+}
+.icon-message {
+  background-image: url('../icons/icon-message.svg');
+}
+.icon-ring {
+  background-image: url('../icons/icon-ring.svg');
+}
+.icon-helpmenu {
+  background-image: url('../icons/icon-helpmenu.svg');
+}
+.icon-moremenu {
+  background-image: url('../icons/icon-moremenu.svg');
+}
+.icon-knowledge {
+  background-image: url('../icons/icon-knowledge.svg');
+}
+.icon-ngcontent {
+  background-image: url('../icons/icon-ngcontent.svg');
+  width: 32px;
+  height: 32px;
+}
+.icon-avatar {
+  background-image: url('../icons/icon-avatar.png');
+  border-radius: 50%;
+  object-fit: cover;
+  width: 32px;
+  height: 32px;
+}
+.icon-user {
+  background-image: url('../icons/icon-avatar.png');
+  border-radius: 50%;
+  object-fit: cover;
+  width: 20x;
+  height: 20px;
+}
+
+/* Icon main table */
