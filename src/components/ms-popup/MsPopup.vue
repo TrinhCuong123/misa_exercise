@@ -79,12 +79,10 @@ const closeModal = () => {
 @keyframes popupAnimation {
   from {
     opacity: 0;
-    top: 20%;
   }
 
   to {
     opacity: 1;
-    top: 2%;
   }
 }
 </style>

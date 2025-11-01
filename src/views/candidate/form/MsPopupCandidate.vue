@@ -20,8 +20,13 @@
               <div class="icon icon-down"></div>
             </div>
           </div>
-          <div class="input-icon">
-            <input id="birthday" type="text" placeholder="dd/MM/yyyy" />
+          <div class="input-icon w-100">
+            <!-- <input id="birthday" type="text" placeholder="dd/MM/yyyy" /> -->
+            <DatePicker v-model="date" date-format="dd/mm/yy" placeholder="dd/MM/yyyy" show-icon fluid/>
+              <!-- <template #inputicon="slotProps">
+                <i class="pi pi-clock" @click="slotProps.clickCallback" />
+              </template> -->
+            <!-- </DatePicker> -->
           </div>
         </div>
         <div class="popup-input popup-content-gender w-100">
@@ -239,7 +244,10 @@
 
 <script setup>
 import ModalPopup from '@/components/ms-popup/MsPopup.vue';
+import DatePicker from 'primevue/datepicker';
+import { ref } from 'vue';
 
+const date = ref(null);
 const emit = defineEmits(['closeModal']);
 const closeModal = () => {
   emit('closeModal');
@@ -344,5 +352,8 @@ const closeModal = () => {
   background-color: #2680eb;
   color: #ffffff;
   border-radius: 5px;
+}
+.p-datepicker {
+  width: 100%;
 }
 </style>
