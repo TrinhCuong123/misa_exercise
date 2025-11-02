@@ -8,7 +8,7 @@
           <span>*</span>
         </div>
         <div class="input-icon">
-          <input id="candidateName" type="text" class="w-100" placeholder="Nhập họ và tên" />
+          <input id="candidateName" type="text" class="w-100 h-32px" placeholder="Nhập họ và tên" />
         </div>
       </div>
       <div class="popup-content-dobgender d-flex">
@@ -21,12 +21,7 @@
             </div>
           </div>
           <div class="input-icon w-100">
-            <!-- <input id="birthday" type="text" placeholder="dd/MM/yyyy" /> -->
             <DatePicker v-model="date" date-format="dd/mm/yy" placeholder="dd/MM/yyyy" show-icon fluid/>
-              <!-- <template #inputicon="slotProps">
-                <i class="pi pi-clock" @click="slotProps.clickCallback" />
-              </template> -->
-            <!-- </DatePicker> -->
           </div>
         </div>
         <div class="popup-input popup-content-gender w-100">
@@ -35,7 +30,7 @@
               <label>Giới tính</label>
             </div>
             <div class="input-icon input-icon-left">
-              <input id="gender" type="text" placeholder="Chọn giới tính" />
+              <input id="gender" class="h-32px" type="text" placeholder="Chọn giới tính" />
               <div class="icon-right icon icon-down"></div>
             </div>
           </div>
@@ -48,7 +43,7 @@
             <label>Khu vực</label>
           </div>
           <div class="input-icon input-icon-left">
-            <input id="areaName" type="text" placeholder="Chọn khu vực" />
+            <input id="areaName" class="h-32px" type="text" placeholder="Chọn khu vực" />
             <div class="icon-right icon icon-down"></div>
           </div>
         </div>
@@ -61,7 +56,7 @@
               <label>Số điện thoại</label>
             </div>
             <div class="input-icon">
-              <input id="mobile" type="text" placeholder="Nhập số điện thoại" />
+              <input id="mobile" class="h-32px" type="text" placeholder="Nhập số điện thoại" />
             </div>
           </div>
         </div>
@@ -71,7 +66,7 @@
               <label>Email</label>
             </div>
             <div class="input-icon">
-              <input id="email" type="text" placeholder="Nhập email" />
+              <input id="email" class="h-32px" type="text" placeholder="Nhập email" />
             </div>
           </div>
         </div>
@@ -82,7 +77,7 @@
             <label>Địa chỉ</label>
           </div>
           <div class="input-icon">
-            <input id="address" type="text" placeholder="Nhập địa chỉ" />
+            <input id="address" class="h-32px" type="text" placeholder="Nhập địa chỉ" />
           </div>
         </div>
       </div>
@@ -93,7 +88,7 @@
             <div class="icon icon-dot mr-8"></div>
             <label>Trình độ đào tạo</label>
             <div class="input-icon">
-              <input id="educationDegreeName" type="text" placeholder="Nhập trình độ đào tạo" />
+              <input id="educationDegreeName" class="h-32px" type="text" placeholder="Nhập trình độ đào tạo" />
               <div class="icon-right icon icon-plus"></div>
             </div>
           </div>
@@ -101,7 +96,7 @@
             <div class="icon icon-dot mr-8"></div>
             <label>Nơi đào tạo</label>
             <div class="input-icon">
-              <input id="educationPlaceName" type="text" placeholder="Nhập nơi đào tạo" />
+              <input id="educationPlaceName" class="h-32px" type="text" placeholder="Nhập nơi đào tạo" />
               <div class="icon-right icon icon-plus"></div>
             </div>
           </div>
@@ -109,7 +104,7 @@
             <div class="icon icon-dot mr-8"></div>
             <label>Chuyên ngành</label>
             <div class="input-icon">
-              <input id="educationMajorName" type="text" placeholder="Nhập chuyên ngành" />
+              <input id="educationMajorName" class="h-32px" type="text" placeholder="Nhập chuyên ngành" />
               <div class="icon-right icon icon-plus"></div>
             </div>
           </div>
@@ -127,7 +122,7 @@
             <span>*</span>
           </div>
           <div class="input-icon input-icon-left">
-            <input id="applyDate" type="text" placeholder="Chọn ngày ứng tuyển" />
+            <input id="applyDate" class="h-32px" type="text" placeholder="Chọn ngày ứng tuyển" />
             <div class="icon-right icon icon-down"></div>
           </div>
         </div>
@@ -136,7 +131,7 @@
             <label>Nguồn ứng viên</label>
           </div>
           <div class="input-icon input-icon-left">
-            <input id="Gender" type="text" placeholder="Chọn nguồn ứng viên" />
+            <input v-model="channelName" id="Gender" class="h-32px" type="text" placeholder="Chọn nguồn ứng viên" />
             <div class="icon-right icon icon-down"></div>
           </div>
         </div>
@@ -148,7 +143,7 @@
               <label>Nhân sự khai thác</label>
             </div>
             <div class="input-icon input-icon-left">
-              <input id="Gender" type="text" placeholder="Chọn nhân sự khai thác" />
+              <input id="Gender" type="text" class="h-32px" placeholder="Chọn nhân sự khai thác" />
               <div class="icon-right icon icon-down"></div>
             </div>
           </div>
@@ -159,7 +154,7 @@
               <label>Cộng tác viên</label>
             </div>
             <div class="input-icon input-icon-left">
-              <input id="Gender" type="text" placeholder="Chọn cộng tác viên" />
+              <input v-model="collaboratorName" id="collaboratorName" class="h-32px" type="text" placeholder="Chọn cộng tác viên" />
               <div class="icon-right icon icon-down"></div>
             </div>
           </div>
@@ -167,7 +162,7 @@
       </div>
       <div class="popup-content-themnhanhnhansu d-flex">
         <div class="mr-8">
-          <input id="Gender" type="checkbox" />
+          <input id="Gender" class="h-32px" type="checkbox" />
         </div>
         <div>Thêm nhanh người tham chiếu vào kho ứng viên</div>
       </div>
@@ -180,7 +175,7 @@
           <label>Nơi làm việc gần đây</label>
         </div>
         <div class="input-icon input-icon-left">
-          <input id="Gender" type="text" placeholder="Nhập nơi làm việc gần đây" />
+          <input id="Gender" class="h-32px" type="text" placeholder="Nhập nơi làm việc gần đây" />
         </div>
       </div>
       <hr />
@@ -194,7 +189,7 @@
             <label>Nơi làm việc</label>
           </div>
           <div class="input-icon input-icon-left">
-            <input id="Gender" type="text" placeholder="Nhập nơi làm việc" />
+            <input v-model="workPlaceRecent" id="Gender" class="h-32px" type="text" placeholder="Nhập nơi làm việc" />
           </div>
         </div>
       </div>
@@ -205,11 +200,11 @@
           </div>
           <div class="d-flex align-center">
             <div class="input-icon input-icon-left">
-              <input id="Gender" type="text" placeholder="MM/yyyy" />
+              <input id="Gender" type="text" class="h-32px" placeholder="MM/yyyy" />
             </div>
             <div>-</div>
             <div class="input-icon input-icon-left">
-              <input id="Gender" type="text" placeholder="MM/yyyy" />
+              <input id="Gender" type="text" class="h-32px" placeholder="MM/yyyy" />
             </div>
           </div>
         </div>
@@ -220,7 +215,7 @@
             <label>Vị trí công việc</label>
           </div>
           <div class="input-icon input-icon-left">
-            <input id="jobPositionName" type="text" placeholder="Nhập vị trí công việc" />
+            <input id="jobPositionName" class="h-32px" type="text" placeholder="Nhập vị trí công việc" />
           </div>
         </div>
       </div>
@@ -230,7 +225,7 @@
             <label>Mô tả công việc</label>
           </div>
           <div class="input-icon input-icon-left">
-            <input id="HireDate" type="text" placeholder="Nhập mô tả công việc" />
+            <input id="HireDate" class="h-32px" type="text" placeholder="Nhập mô tả công việc" />
           </div>
         </div>
       </div>

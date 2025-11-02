@@ -2,13 +2,14 @@
   <div>
     <div class="table-header-input">
       <div class="header-input-right icon" :class="icon" v-if="icon"></div>
-      <input :value="modelValue" class="header-left-input" type="text" :placeholder="placeholder" :style="objectStyle"
+      <input :value="modelValue" class="header-left-input" type="text" :placeholder="placeholder" :style="getStyle"
         @input="updateInputValue" />
     </div>
   </div>
 </template>
 
 <script setup>
+import { computed } from 'vue'
 //  icon-search
 
 const props = defineProps({
@@ -33,6 +34,13 @@ const emit = defineEmits(['update:modelValue'])
 const updateInputValue = () => {
   emit('update:modelValue', props.modelValue)
 }
+
+const getStyle = computed(() => {
+  return {
+    width: '200px',
+    ...props.objectStyle
+  }
+})
 </script>
 
 <style scoped>

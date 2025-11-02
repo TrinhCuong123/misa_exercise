@@ -40,7 +40,8 @@ import { ref } from "vue";
 
 const search = ref("");
 const styleObject = ref({
-  width: "365px",
+  border: "none",
+  width: "500px",
 });
 </script>
 
