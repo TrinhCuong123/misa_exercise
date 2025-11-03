@@ -10,8 +10,6 @@
 
 <script setup>
 import { computed } from 'vue'
-//  icon-search
-
 const props = defineProps({
   icon: {
     type: String,

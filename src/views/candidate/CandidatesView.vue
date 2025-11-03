@@ -31,7 +31,8 @@
         <div class="icon icon-settings"></div>
       </div>
     </div>
-    <div class="main-table-body">
+    <ms-table :candidate-data></ms-table>
+    <!-- <div class="main-table-body">
       <table>
         <thead>
           <tr>
@@ -129,31 +130,41 @@
           </tr>
         </tbody>
       </table>
-    </div>
-    <div class="main-table-footer d-flex justify-space-between">
+    </div> -->
+    <!-- <div class="main-table-footer d-flex justify-space-between">
       <div class="footer-sum-record">Tổng: <b>{{ sumRecord }}</b> bản ghi</div>
       <div class="footer-pagging">Số bản ghi/trang</div>
-    </div>
+    </div> -->
   </div>
-  <popup-candidate v-show="isOpenModal" @close-modal=closeModal />
+  <popup-candidate v-if="isOpenModal" @close-modal=closeModal @active-toast="activeToast" />
+  <toast-candidate v-show="isActiveToast" state-toast="success" header-toast="Thông tin" content-toast="Thông báo!" />
 </template>
 <script setup>
 import { ref } from 'vue';
 import PopupCandidate from '@/views/candidate/form/MsPopupCandidate.vue';
 import MsInput from '@/components/ms-input/MsInput.vue';
+import MsTable  from '@/components/ms-table/ms-table.vue';
 import { pushDataCandidate } from '@/services/fetchCandidate.js';
-import { formatDate, formatGender, checkIsTalentPoolDetail, checkProbationInfoStatus, formatOfferStatus, checkNull, generateAvatar } from '@/utils/formatOutput.js';
+import ToastCandidate from '@/components/ms-toast/MsToast.vue';
 
 const candidateData = pushDataCandidate();
-const sumRecord = candidateData.length;
+const isActiveToast = ref(false);
 const search = ref('');
 const isOpenModal = ref(false);
+const activeToast = () => {
+  isActiveToast.value = true;
+  setTimeout(() => {
+    isActiveToast.value = false;
+  }, 2000);
+};
 const openModal = () => {
   isOpenModal.value = true;
 };
 const closeModal = () => {
   isOpenModal.value = false;
+
 };
+
 </script>
 
 <style scoped>
@@ -196,45 +207,6 @@ const closeModal = () => {
   border: 8px solid #7a8188;
 }
 
-.main-table-body {
-  display: block;
-  float: left;
-  width: calc(100vw - 281px);
-  flex: 1 1 0;
-  overflow: auto;
-}
-
-.main-table-body th {
-  text-align: start;
-  background-color: #f9fafb;
-  border: none;
-  outline: none;
-}
-
-.main-table-body table {
-  border-collapse: collapse;
-}
-
-.main-table-body th,
-.main-table-body td {
-  min-width: 200px;
-  border-bottom: 1px solid #ddd;
-  height: 48px;
-}
-
-.main-table-body th:nth-child(1),
-.main-table-body td:nth-child(1) {
-  min-width: 50px;
-  text-align: center;
-}
-
-.main-table-footer {
-  display: flex;
-  align-items: center;
-  padding: 0 20px;
-  height: 30px;
-}
-
 .btn-create-employee {
   background-color: #0078d4;
   color: white;
@@ -252,69 +224,5 @@ const closeModal = () => {
 
 .btn-create-employee .btn-right {
   margin: 0 10px;
-}
-
-/* Table full name column */
-.table-name-avatar img {
-  border-radius: 50%;
-  object-fit: cover;
-  width: 20px;
-  height: 20px;
-  margin-right: 5px;
-}
-
-.avatar-circle {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  margin-right: 10px;
-  color: white;
-}
-
-.action-cell {
-  min-width: 0 !important;
-}
-
-.data-row {
-  position: relative;
-}
-
-.data-row .action-cell {
-  position: sticky;
-  right: -10px;
-  z-index: 1;
-  min-width: 8px;
-}
-
-.data-row .action-buttons {
-  display: none;
-}
-
-.data-row:hover .action-buttons {
-  display: flex;
-  gap: 8px
-}
-
-.action-buttons .btn-edit,
-.action-buttons .btn-delete {
-  border: none;
-  outline: none;
-  background-color: transparent;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-}
-
-.action-buttons .icon__update:hover {
-  background-color: #005a9e;
-}
-
-.action-buttons .icon__delete:hover {
-  background-color: #d9534f;
 }
 </style>

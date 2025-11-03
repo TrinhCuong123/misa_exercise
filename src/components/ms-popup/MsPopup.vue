@@ -3,7 +3,8 @@
     <div class="popup-create d-flex flex-direction-column">
       <div class="popup-header d-flex justify-space-between align-center">
         <div class="popup-header-title">
-          <slot name="title"></slot>
+          <!-- <slot name="title"></slot> -->
+          {{ title }}
         </div>
         <div class="popup-header-icon icon icon-close cursor-pointer" @click="closeModal"></div>
       </div>
@@ -11,16 +12,28 @@
         <slot name="content"></slot>
       </div>
       <div class="popup-footer d-flex align-center">
-        <slot name="footer"></slot>
+        <!-- <slot name="footer"></slot> -->
+        <div @click="closeModal" class="btn-close cursor-pointer">Hủy</div>
+        <div v-on:click="saveData" class="btn-save cursor-pointer">Lưu</div>
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
-const emit = defineEmits(['closeModal'])
+defineProps({
+  title: {
+    type: String,
+    default: ''
+  }
+
+})
+const emit = defineEmits(['closeModal', 'saveData'])
 const closeModal = () => {
   emit('closeModal')
+}
+const saveData = () => {
+  emit('saveData')
 }
 </script>
 
@@ -84,5 +97,17 @@ const closeModal = () => {
   to {
     opacity: 1;
   }
+}
+
+.btn-close {
+  padding: 7px 16px;
+  border-radius: 5px;
+}
+
+.btn-save {
+  padding: 7px 16px;
+  background-color: #2680eb;
+  color: #ffffff;
+  border-radius: 5px;
 }
 </style>

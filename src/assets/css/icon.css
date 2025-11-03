@@ -142,3 +142,15 @@
   width: 16px;
   height: 16px;
 }
+.icon-success {
+  mask-position: -205px -32px;
+  background-color: #7a8188;
+  width: 16px;
+  height: 16px;
+}
+.icon-info {
+  mask-position: -192px -49px;
+  background-color: #7a8188;
+  width: 16px;
+  height: 16px;
+}

@@ -48,7 +48,7 @@ function formatOfferStatus(statusCode) {
   } else return '--'
 }
 
-function generateAvatar(name, color) {
+function generateAvatar(name) {
   if (!name) return ''
   const initials = name
     .split(' ')
@@ -58,9 +58,9 @@ function generateAvatar(name, color) {
     .toUpperCase()
 
   // Sử dụng màu từ trường avatarColor
-  const avatarColor = color || '#0078d4' // Mặc định nếu không có màu
+  // const avatarColor = color || '#0078d4' // Mặc định nếu không có màu
 
-  return `<div class="avatar-circle" style="background-color: ${avatarColor};">${initials}</div>`
+  return initials
 }
 
 export {

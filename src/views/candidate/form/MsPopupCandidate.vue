@@ -1,261 +1,331 @@
 <template>
-  <modal-popup @close-modal="closeModal">
-    <template #title>Thêm ứng viên</template>
-    <template #content>
-      <div class="popup-content-fullname popup-input">
-        <div>
-          <label>Họ và tên</label>
-          <span>*</span>
-        </div>
-        <div class="input-icon">
-          <input id="candidateName" type="text" class="w-100 h-32px" placeholder="Nhập họ và tên" />
-        </div>
-      </div>
-      <div class="popup-content-dobgender d-flex">
-        <div class="popup-input popup-content-dob w-100 mr-10">
-          <div class="d-flex justify-space-between">
-            <label>Ngày sinh</label>
-            <div class="content-dob-note d-flex align-center mr-10">
-              <div>Ngày tháng năm</div>
-              <div class="icon icon-down"></div>
-            </div>
-          </div>
-          <div class="input-icon w-100">
-            <DatePicker v-model="date" date-format="dd/mm/yy" placeholder="dd/MM/yyyy" show-icon fluid/>
-          </div>
-        </div>
-        <div class="popup-input popup-content-gender w-100">
+  <div>
+    <modal-popup :title="'Thêm ứng viên'" @close-modal="closeModal" @save-data="saveData">
+      <!-- <template #title></template> -->
+      <template #content>
+        <div class="popup-content-fullname popup-input">
           <div>
-            <div>
-              <label>Giới tính</label>
-            </div>
-            <div class="input-icon input-icon-left">
-              <input id="gender" class="h-32px" type="text" placeholder="Chọn giới tính" />
-              <div class="icon-right icon icon-down"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="popup-input popup-content-area">
-        <div>
-          <div>
-            <label>Khu vực</label>
-          </div>
-          <div class="input-icon input-icon-left">
-            <input id="areaName" class="h-32px" type="text" placeholder="Chọn khu vực" />
-            <div class="icon-right icon icon-down"></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="popup-content-phonenumbermail d-flex">
-        <div class="popup-input popup-content-phonenumber w-100 mr-10">
-          <div>
-            <div>
-              <label>Số điện thoại</label>
-            </div>
-            <div class="input-icon">
-              <input id="mobile" class="h-32px" type="text" placeholder="Nhập số điện thoại" />
-            </div>
-          </div>
-        </div>
-        <div class="popup-input popup-content-email w-100">
-          <div>
-            <div>
-              <label>Email</label>
-            </div>
-            <div class="input-icon">
-              <input id="email" class="h-32px" type="text" placeholder="Nhập email" />
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="popup-input popup-content-adress">
-        <div>
-          <div>
-            <label>Địa chỉ</label>
-          </div>
-          <div class="input-icon">
-            <input id="address" class="h-32px" type="text" placeholder="Nhập địa chỉ" />
-          </div>
-        </div>
-      </div>
-      <div class="popup-content-education">
-        <div>Học vấn</div>
-        <div>
-          <div class="d-flex align-center">
-            <div class="icon icon-dot mr-8"></div>
-            <label>Trình độ đào tạo</label>
-            <div class="input-icon">
-              <input id="educationDegreeName" class="h-32px" type="text" placeholder="Nhập trình độ đào tạo" />
-              <div class="icon-right icon icon-plus"></div>
-            </div>
-          </div>
-          <div class="d-flex align-center">
-            <div class="icon icon-dot mr-8"></div>
-            <label>Nơi đào tạo</label>
-            <div class="input-icon">
-              <input id="educationPlaceName" class="h-32px" type="text" placeholder="Nhập nơi đào tạo" />
-              <div class="icon-right icon icon-plus"></div>
-            </div>
-          </div>
-          <div class="d-flex align-center">
-            <div class="icon icon-dot mr-8"></div>
-            <label>Chuyên ngành</label>
-            <div class="input-icon">
-              <input id="educationMajorName" class="h-32px" type="text" placeholder="Nhập chuyên ngành" />
-              <div class="icon-right icon icon-plus"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <hr />
-      <div class="popup-content-themhocvan d-flex align-center">
-        <div class="icon icon-plus icon-plus-blue"></div>
-        <div class="title-plus">Thêm học vấn</div>
-      </div>
-      <div class="popup-content-ungtuyen d-flex">
-        <div class="popup-input content-data-apply w-100 mr-10">
-          <div>
-            <label>Ngày ứng tuyển</label>
+            <label>Họ và tên</label>
             <span>*</span>
           </div>
-          <div class="input-icon input-icon-left">
-            <input id="applyDate" class="h-32px" type="text" placeholder="Chọn ngày ứng tuyển" />
-            <div class="icon-right icon icon-down"></div>
+          <div class="input-icon">
+            <input v-model="formCadidate.candidateName" id="candidateName" type="text" class="w-100 h-32px"
+              placeholder="Nhập họ và tên" :autofocus="true" />
           </div>
         </div>
-        <div class="popup-input content-nguonungvien w-100">
-          <div>
-            <label>Nguồn ứng viên</label>
+        <div class="popup-content-dobgender d-flex">
+          <div class="popup-input popup-content-dob w-100 mr-10">
+            <div class="d-flex justify-space-between">
+              <label>Ngày sinh</label>
+              <div class="content-dob-note d-flex align-center mr-10">
+                <div>Ngày tháng năm</div>
+                <div class="icon icon-down"></div>
+              </div>
+            </div>
+            <div class="input-icon w-100">
+              <!-- <DatePicker v-model="formCadidate.birthday" class="h-32px" date-format="dd/mm/yy" placeholder="dd/MM/yyyy"
+                show-icon fluid /> -->
+                <date-picker v-model="formCadidate.birthday"/>
+            </div>
           </div>
-          <div class="input-icon input-icon-left">
-            <input v-model="channelName" id="Gender" class="h-32px" type="text" placeholder="Chọn nguồn ứng viên" />
-            <div class="icon-right icon icon-down"></div>
+          <div class="popup-input popup-content-gender w-100">
+            <div>
+              <div>
+                <label>Giới tính</label>
+              </div>
+              <!-- <div class="input-icon input-icon-left"> -->
+              <div>
+                <!-- <input id="gender" class="h-32px" type="text" placeholder="Chọn giới tính" /> -->
+                <Select v-model="formCadidate.gender" :options="listGender" option-label="label" option-value="value"
+                  placeholder="Chọn giới tính" class="h-32px" fluid />
+                <!-- <div class="icon-right icon icon-down"></div> -->
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="popup-input popup-content-nhansu d-flex">
-        <div class="content-mining-personnel w-100 mr-10">
+
+        <div class="popup-input popup-content-area">
           <div>
             <div>
-              <label>Nhân sự khai thác</label>
+              <label>Khu vực</label>
             </div>
             <div class="input-icon input-icon-left">
-              <input id="Gender" type="text" class="h-32px" placeholder="Chọn nhân sự khai thác" />
+              <input v-model="formCadidate.areaName" id="areaName" class="h-32px" type="text"
+                placeholder="Chọn khu vực" />
               <div class="icon-right icon icon-down"></div>
             </div>
           </div>
         </div>
-        <div class="content-congtavien w-100">
+
+        <div class="popup-content-phonenumbermail d-flex">
+          <div class="popup-input popup-content-phonenumber w-100 mr-10">
+            <div>
+              <div>
+                <label>Số điện thoại</label>
+              </div>
+              <div class="input-icon">
+                <input v-model="formCadidate.mobile" id="mobile" class="h-32px" type="text"
+                  placeholder="Nhập số điện thoại" />
+              </div>
+            </div>
+          </div>
+          <div class="popup-input popup-content-email w-100">
+            <div>
+              <div>
+                <label>Email</label>
+              </div>
+              <div class="input-icon">
+                <input v-model="formCadidate.email" id="email" class="h-32px" type="text" placeholder="Nhập email" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="popup-input popup-content-adress">
           <div>
             <div>
-              <label>Cộng tác viên</label>
+              <label>Địa chỉ</label>
+            </div>
+            <div class="input-icon">
+              <input v-model="formCadidate.address" id="address" class="h-32px" type="text"
+                placeholder="Nhập địa chỉ" />
+            </div>
+          </div>
+        </div>
+        <div class="popup-content-education">
+          <div>HỌC VẤN</div>
+          <div>
+            <div class="d-flex align-center mb-8">
+              <div class="icon icon-dot mr-8"></div>
+              <label>Trình độ đào tạo</label>
+              <div class="input-icon">
+                <input v-model="formCadidate.educationDegreeName" id="educationDegreeName" class="h-32px" type="text"
+                  placeholder="Nhập trình độ đào tạo" />
+                <div class="icon-right icon icon-plus"></div>
+              </div>
+            </div>
+            <div class="d-flex align-center mb-8">
+              <div class="icon icon-dot mr-8"></div>
+              <label>Nơi đào tạo</label>
+              <div class="input-icon">
+                <input v-model="formCadidate.educationPlaceName" id="educationPlaceName" class="h-32px" type="text"
+                  placeholder="Nhập nơi đào tạo" />
+                <div class="icon-right icon icon-plus"></div>
+              </div>
+            </div>
+            <div class="d-flex align-center mb-8">
+              <div class="icon icon-dot mr-8"></div>
+              <label>Chuyên ngành</label>
+              <div class="input-icon">
+                <input v-model="formCadidate.educationMajorName" id="educationMajorName" class="h-32px" type="text"
+                  placeholder="Nhập chuyên ngành" />
+                <div class="icon-right icon icon-plus"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="popup-content-themhocvan d-flex align-center">
+          <div class="icon icon-plus icon-plus-blue"></div>
+          <div class="title-plus">Thêm học vấn</div>
+        </div>
+        <div class="popup-content-ungtuyen d-flex">
+          <div class="popup-input content-data-apply w-100 mr-10">
+            <div>
+              <label>Ngày ứng tuyển</label>
+              <span>*</span>
             </div>
             <div class="input-icon input-icon-left">
-              <input v-model="collaboratorName" id="collaboratorName" class="h-32px" type="text" placeholder="Chọn cộng tác viên" />
+              <input v-model="formCadidate.applyDate" id="applyDate" class="h-32px" type="text"
+                placeholder="Chọn ngày ứng tuyển" />
+              <div class="icon-right icon icon-down"></div>
+            </div>
+          </div>
+          <div class="popup-input content-nguonungvien w-100">
+            <div>
+              <label>Nguồn ứng viên</label>
+            </div>
+            <div class="input-icon input-icon-left">
+              <input v-model="formCadidate.channelName" id="Gender" class="h-32px" type="text"
+                placeholder="Chọn nguồn ứng viên" />
               <div class="icon-right icon icon-down"></div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="popup-content-themnhanhnhansu d-flex">
-        <div class="mr-8">
-          <input id="Gender" class="h-32px" type="checkbox" />
-        </div>
-        <div>Thêm nhanh người tham chiếu vào kho ứng viên</div>
-      </div>
-      <div class="popup-content-themnguoigioithieu d-flex align-center">
-        <div class="icon icon-plus icon-plus-blue"></div>
-        <div class="title-plus">Thêm người giới thiệu</div>
-      </div>
-      <div class="popup-input popup-content-noilamviecgan">
-        <div>
-          <label>Nơi làm việc gần đây</label>
-        </div>
-        <div class="input-icon input-icon-left">
-          <input id="Gender" class="h-32px" type="text" placeholder="Nhập nơi làm việc gần đây" />
-        </div>
-      </div>
-      <hr />
-      <div class="popup-content-themkinhnolamviec d-flex align-center">
-        <div class="icon icon-plus icon-plus-blue"></div>
-        <div class="title-plus">Thêm kinh nghiệm làm việc</div>
-      </div>
-      <div class="popup-input popup-content-noilamviec">
-        <div>
-          <div>
-            <label>Nơi làm việc</label>
-          </div>
-          <div class="input-icon input-icon-left">
-            <input v-model="workPlaceRecent" id="Gender" class="h-32px" type="text" placeholder="Nhập nơi làm việc" />
-          </div>
-        </div>
-      </div>
-      <div class="popup-input popup-thoigian">
-        <div>
-          <div>
-            <label>Thời gian</label>
-          </div>
-          <div class="d-flex align-center">
-            <div class="input-icon input-icon-left">
-              <input id="Gender" type="text" class="h-32px" placeholder="MM/yyyy" />
+        <div class="popup-input popup-content-nhansu d-flex">
+          <div class="content-mining-personnel w-100 mr-10">
+            <div>
+              <div>
+                <label>Nhân sự khai thác</label>
+              </div>
+              <div class="input-icon input-icon-left">
+                <input id="Gender" type="text" class="h-32px" placeholder="Chọn nhân sự khai thác" />
+                <div class="icon-right icon icon-down"></div>
+              </div>
             </div>
-            <div>-</div>
-            <div class="input-icon input-icon-left">
-              <input id="Gender" type="text" class="h-32px" placeholder="MM/yyyy" />
+          </div>
+          <div class="content-congtavien w-100">
+            <div>
+              <div>
+                <label>Cộng tác viên</label>
+              </div>
+              <div class="input-icon input-icon-left">
+                <input v-model="formCadidate.collaboratorName" id="collaboratorName" class="h-32px" type="text"
+                  placeholder="Chọn cộng tác viên" />
+                <div class="icon-right icon icon-down"></div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="popup-input popup-content-vitricongviec">
-        <div>
+        <div class="popup-content-themnhanhnhansu d-flex">
+          <div class="mr-8">
+            <input id="Gender" class="h-32px" type="checkbox" />
+          </div>
+          <div>Thêm nhanh người tham chiếu vào kho ứng viên</div>
+        </div>
+        <div class="popup-content-themnguoigioithieu d-flex align-center">
+          <div class="icon icon-plus icon-plus-blue"></div>
+          <div class="title-plus">Thêm người giới thiệu</div>
+        </div>
+        <div class="popup-input popup-content-noilamviecgan">
           <div>
-            <label>Vị trí công việc</label>
+            <label>Nơi làm việc gần đây</label>
           </div>
           <div class="input-icon input-icon-left">
-            <input id="jobPositionName" class="h-32px" type="text" placeholder="Nhập vị trí công việc" />
+            <input id="Gender" class="h-32px" type="text" placeholder="Nhập nơi làm việc gần đây" />
           </div>
         </div>
-      </div>
-      <div class="popup-input popup-content-motacongviec">
-        <div>
+        <hr />
+        <div class="popup-content-themkinhnolamviec d-flex align-center">
+          <div class="icon icon-plus icon-plus-blue"></div>
+          <div class="title-plus">Thêm kinh nghiệm làm việc</div>
+        </div>
+        <div class="popup-input popup-content-noilamviec">
           <div>
-            <label>Mô tả công việc</label>
-          </div>
-          <div class="input-icon input-icon-left">
-            <input id="HireDate" class="h-32px" type="text" placeholder="Nhập mô tả công việc" />
+            <div>
+              <label>Nơi làm việc</label>
+            </div>
+            <div class="input-icon input-icon-left">
+              <input v-model="formCadidate.workPlaceRecent" id="Gender" class="h-32px" type="text"
+                placeholder="Nhập nơi làm việc" />
+            </div>
           </div>
         </div>
-      </div>
-    </template>
-    <template #footer>
-      <div @click="closeModal" class="btn-close cursor-pointer">Hủy</div>
-      <div class="btn-save cursor-pointer">Lưu</div>
-    </template>
-  </modal-popup>
+        <div class="popup-input popup-thoigian">
+          <div>
+            <div>
+              <label>Thời gian</label>
+            </div>
+            <div class="d-flex align-center">
+              <div class="input-icon input-icon-left">
+                <input id="Gender" type="text" class="h-32px" placeholder="MM/yyyy" />
+              </div>
+              <div>-</div>
+              <div class="input-icon input-icon-left">
+                <input id="Gender" type="text" class="h-32px" placeholder="MM/yyyy" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="popup-input popup-content-vitricongviec">
+          <div>
+            <div>
+              <label>Vị trí công việc</label>
+            </div>
+            <div class="input-icon input-icon-left">
+              <input v-model="formCadidate.jobPositionName" id="jobPositionName" class="h-32px" type="text"
+                placeholder="Nhập vị trí công việc" />
+            </div>
+          </div>
+        </div>
+        <div class="popup-input popup-content-motacongviec">
+          <div>
+            <div>
+              <label>Mô tả công việc</label>
+            </div>
+            <div class="input-icon input-icon-left">
+              <input id="HireDate" class="h-32px" type="text" placeholder="Nhập mô tả công việc" />
+            </div>
+          </div>
+        </div>
+      </template>
+      <!-- <template #footer>
+        <div @click="closeModal" class="btn-close cursor-pointer">Hủy</div>
+        <div v-on:click="saveData" class="btn-save cursor-pointer">Lưu</div>
+      </template> -->
+    </modal-popup>
+  </div>
 </template>
 
 <script setup>
 import ModalPopup from '@/components/ms-popup/MsPopup.vue';
-import DatePicker from 'primevue/datepicker';
 import { ref } from 'vue';
+import { listGender } from '@/utils/constants.js'
+import Select from 'primevue/select';
+import DatePicker from '@/components/ms-datepicker/MSDatepicker.vue';
 
-const date = ref(null);
-const emit = defineEmits(['closeModal']);
+const emit = defineEmits(['closeModal', 'activeToast']);
 const closeModal = () => {
   emit('closeModal');
 };
+
+const formCadidate = ref({
+  candidateName: '',
+  birthday: new Date(),
+  gender: null,
+  areaName: '',
+  mobile: '',
+  email: '',
+  address: '',
+  educationDegreeName: '',
+  educationPlaceName: '',
+  educationMajorName: '',
+  applyDate: '',
+  channelName: '',
+  collaboratorName: '',
+  workPlaceRecent: '',
+  jobPositionName: ''
+});
+
+const saveData = () => {
+  const data = {
+    CandidateName: formCadidate.value.candidateName,
+    Birthday: formCadidate.value.birthday,
+    Gender: formCadidate.value.gender,
+    AreaName: formCadidate.value.areaName,
+    Mobile: formCadidate.value.mobile,
+    Email: formCadidate.value.email,
+    Address: formCadidate.value.address,
+    EducationDegreeName: formCadidate.value.educationDegreeName,
+    EducationPlaceName: formCadidate.value.educationPlaceName,
+    EducationMajorName: formCadidate.value.educationMajorName,
+    ApplyDate: formCadidate.value.applyDate,
+    ChannelName: formCadidate.value.channelName,
+    CollaboratorName: formCadidate.value.collaboratorName,
+    WorkPlaceRecent: formCadidate.value.workPlaceRecent,
+    JobPositionName: formCadidate.value.jobPositionName
+  }
+
+  console.log(data);
+
+  // const candidateData = localStorage.getItem('candidateData') ? JSON.parse(localStorage.getItem('candidateData')) : [];
+  // candidateData.unshift(data);
+  // localStorage.setItem('candidateData', JSON.stringify(candidateData));
+  // closeModal();
+  // emit('activeToast');
+};
+
 </script>
 
 <style scoped>
 /* style label */
 /* .popup-input {} */
+.popup-input {
+  margin-bottom: 8px;
+}
 
 .popup-input label {
+  color: #1E2633;
   font-size: 14px;
-  font-weight: bold;
+  font-weight: 500;
 }
 
 .popup-input span {
@@ -278,10 +348,11 @@ const closeModal = () => {
 }
 
 .input-icon input {
-  margin: 5px 0;
+  /* margin: 5px 0; */
+  border-radius: 5px;
   border: 1px solid #dddde4;
-  padding: 8px 16px 8px 16px;
-  height: 24px;
+  padding: 8px 16px;
+  /* height: 24px; */
   width: 100%;
   box-sizing: border-box;
   color: #000000;
@@ -328,27 +399,17 @@ const closeModal = () => {
   width: 100%;
 }
 
+.popup-content-education {
+  border-bottom: 1px solid #dee2e6 !important;
+  padding-bottom: 16px;
+}
+
 .popup-content-education label {
   min-width: 150px;
-  font-weight: bold;
+  font-weight: 500;
 }
 
 .popup-content-education input {
   flex: 1;
-}
-
-.btn-close {
-  padding: 7px 16px;
-  border-radius: 5px;
-}
-
-.btn-save {
-  padding: 7px 16px;
-  background-color: #2680eb;
-  color: #ffffff;
-  border-radius: 5px;
-}
-.p-datepicker {
-  width: 100%;
 }
 </style>
