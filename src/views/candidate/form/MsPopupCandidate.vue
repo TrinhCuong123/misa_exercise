@@ -5,8 +5,7 @@
       <template #content>
         <div class="popup-content-fullname popup-input">
           <div>
-            <label>Họ và tên</label>
-            <span>*</span>
+            <label class="requied">Họ và tên</label>
           </div>
           <div class="input-icon">
             <input v-model="formCadidate.candidateName" id="candidateName" type="text" class="w-100 h-32px"
@@ -130,8 +129,7 @@
         <div class="popup-content-ungtuyen d-flex">
           <div class="popup-input content-data-apply w-100 mr-10">
             <div>
-              <label>Ngày ứng tuyển</label>
-              <span>*</span>
+              <label class="requied">Ngày ứng tuyển</label>
             </div>
             <div class="input-icon input-icon-left">
               <!-- <input v-model="formCadidate.applyDate" id="applyDate" class="h-32px" type="text" placeholder="Chọn ngày ứng tuyển" /> -->
@@ -261,6 +259,9 @@ import { listGender } from '@/utils/constants.js'
 import Select from 'primevue/select';
 import DatePicker from '@/components/ms-datepicker/MsDatepicker.vue';
 import { ref } from 'vue';
+// import { useForm } from 'vee-validate';
+// import { object, string } from 'yup';
+// import { toTypedSchema } from '@vee-validate/yup';
 
 const emit = defineEmits(['closeModal', 'activeToast', 'openEditModal']);
 const props = defineProps({
@@ -285,6 +286,15 @@ const props = defineProps({
 const closeModal = () => {
   emit('closeModal');
 };
+
+// const { values, handleSubmit, errors } = useForm({
+//   validationSchema: toTypedSchema(
+//     object({
+//       formCadidate.value.email: string().required().default('something@email.com'),
+//     }),
+//   ),
+// });
+
 
 // const handleEditCandidate = (candidateId) => {
 //   emit('openEditModal', candidateId);

@@ -69,3 +69,8 @@
 .font-14px {
   font-size: 14px !important;
 }
+
+.required:after {
+  content: " *";
+  color: red;
+}
