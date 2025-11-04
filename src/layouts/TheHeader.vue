@@ -40,8 +40,12 @@ import { ref } from "vue";
 
 const search = ref("");
 const styleObject = ref({
+  height: "32px",
+  width: "365px",
   border: "none",
-  width: "500px",
+  borderRadius: "5px",
+  outline: "none",
+  backgroundColor: "#f2f2f2",
 });
 </script>
 
@@ -75,12 +79,7 @@ const styleObject = ref({
 }
 
 .header-left-input {
-  height: 32px;
-  width: 365px;
-  border: none;
-  border-radius: 5px;
-  outline: none;
-  background-color: #f2f2f2;
+  
 }
 
 /* Hover website tuyển dụng */

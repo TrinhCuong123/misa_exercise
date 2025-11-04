@@ -1,6 +1,10 @@
+// ...existing code...
 <template>
+  <!-- Main page title and action button -->
   <div class="main-title justify-space-between d-flex">
     <div class="main-title-left">Ứng viên</div>
+
+    <!-- Create candidate button: opens Add modal -->
     <div class="main-title-right">
       <div class="btn-create-employee d-flex align-center" @click="openModal">
         <div class="btn-left d-flex align-center">
@@ -11,13 +15,14 @@
       </div>
     </div>
   </div>
+
+  <!-- Table area: search, quick actions, and table component -->
   <div class="main-table flex1">
     <div class="main-table-header d-flex justify-end align-center">
-      <!-- <div class="table-header-input">
-        <div class="header-input-right icon icon-search"></div>
-        <input type="text" placeholder="Tìm kiếm nhanh trong danh sách" />
-      </div> -->
+      <!-- Search input bound to `search` ref -->
       <MsInput icon="icon-search" v-model="search" placeholder="Tìm kiếm nhanh trong danh sách" />
+
+      <!-- Quick header action icons (filter, export, quick-active, settings) -->
       <div class="d-flex justify-center align-center table-header-btn">
         <div class="icon icon-filter"></div>
       </div>
@@ -31,143 +36,185 @@
         <div class="icon icon-settings"></div>
       </div>
     </div>
-    <ms-table :candidate-data></ms-table>
-    <!-- <div class="main-table-body">
-      <table>
-        <thead>
-          <tr>
-            <th><input type="checkbox" /></th>
-            <th>Họ và tên</th>
-            <th>Số điện thoại</th>
-            <th>Email</th>
-            <th>Chiến dịch tuyển dụng</th>
-            <th>Vị trí tuyển dụng</th>
-            <th>Tin Tuyển dụng</th>
-            <th>Vòng tuyển dụng</th>
-            <th>Đánh giá</th>
-            <th>Ngày tuyển dụng</th>
-            <th>Nguồn Ứng viên</th>
-            <th>Trình độ đào tạo</th>
-            <th>Nơi đào tạo</th>
-            <th>Chuyên ngành</th>
-            <th>Nơi làm việc gần đây</th>
-            <th>Đơn vị sử dụng</th>
-            <th>Phù Hợp với chân dung</th>
-            <th>Khu vực</th>
-            <th>Người giới thiệu</th>
-            <th>Thông tin tiếp nhận</th>
-            <th>Thuộc kho tiềm năng</th>
-            <th>Tài khoản cổng ứng viên</th>
-            <th>Thẻ</th>
-            <th>Trạng thái</th>
-            <th>Giới tính</th>
-            <th>Ngày sinh</th>
-            <th>Địa chỉ</th>
-            <th>Lý do loại</th>
-            <th>Cộng tác viên</th>
-            <th>Ngày tiếp nhận</th>
-            <th>Trạng thái mời nhận việc</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr class="data-row" v-for="(candidate, index) in candidateData" :key="index">
-            <td><input type="checkbox"></td>
-            <td>
-              <div class="name-with-avatar d-flex align-center">
-                <div class="">
-                  <div class="avatar-circle" :style="{ backgroundColor: candidate.AvatarColor || '#ccc' }">
-                    {{ generateAvatar(
-                      candidate.CandidateName
-                    ) }}
-                  </div>
-                </div>
-                <div>{{ checkNull(candidate.CandidateName) }}</div>
-              </div>
-            </td>
-            <td>{{ checkNull(candidate.Mobile) }}</td>
-            <td>{{ checkNull(candidate.Email) }}</td>
-            <td>{{ checkNull(candidate.RecruitmentCampaignNames) }}</td>
-            <td>{{ checkNull(candidate.JobPositionName) }}</td>
-            <td>{{ checkNull(candidate.RecruitmentName) }}</td>
-            <td>{{ checkNull(candidate.RecruitmentRoundName) }}</td>
-            <td>{{ checkNull(candidate.Score) }}</td>
-            <td>{{ formatDate(candidate.ApplyDate) }}</td>
-            <td>{{ checkNull(candidate.ChannelName) }}</td>
-            <td>{{ checkNull(candidate.EducationDegreeName) }}</td>
-            <td>{{ checkNull(candidate.EducationPlaceName) }}</td>
-            <td>{{ checkNull(candidate.EducationMajorName) }}</td>
-            <td>{{ checkNull(candidate.WorkPlaceRecent) }}</td>
-            <td>{{ checkNull(candidate.OrganizationUnitName) }}</td>
-            <td>{{ checkNull(candidate.Overall) }}</td>
-            <td>{{ checkNull(candidate.AreaName) }}</td>
-            <td>{{ checkNull(candidate.PresenterName) }}</td>
-            <td>{{ checkProbationInfoStatus(
-              candidate.ProbationInfoStatus
-            ) }}</td>
-            <td>{{ checkIsTalentPoolDetail(
-              candidate.IsTalentPoolDetail
-            ) }}</td>
-            <td>{{ checkNull(candidate.AccountPortal) }}</td>
-            <td>{{ checkNull(candidate.TagInfos) }}</td>
-            <td>{{ checkNull(candidate.CandidateStatusName) }}</td>
-            <td>{{ formatGender(candidate.Gender) }}</td>
-            <td>{{ formatDate(candidate.Birthday) }}</td>
-            <td>{{ checkNull(candidate.Address) }}</td>
-            <td>{{ checkNull(candidate.ReasonRemoved) }}</td>
-            <td>{{ checkNull(candidate.CollaboratorName) }}</td>
-            <td>{{ formatDate(candidate.HireDate) }}</td>
-            <td>{{ formatOfferStatus(candidate.OfferStatus) }}</td>
-            <td class="action-cell">
-              <div class="action-buttons d-flex">
-                <button class="btn-edit" aria-label="Sửa">
-                  <div class="icon__right icon icon-update"></div>
-                </button>
-                <button class="btn-delete" aria-label="Xóa">
-                  <div class="icon__right icon icon-delete"></div>
-                </button>
-              </div>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div> -->
-    <!-- <div class="main-table-footer d-flex justify-space-between">
-      <div class="footer-sum-record">Tổng: <b>{{ sumRecord }}</b> bản ghi</div>
-      <div class="footer-pagging">Số bản ghi/trang</div>
-    </div> -->
+
+    <!-- Table component:
+         - v-model paggingValue controls how many rows shown
+         - :candidate-data receives paginatedCandidates
+         - :table-headers is header labels
+         - emits open-edit-modal with candidate index/id -->
+    <ms-table v-model="paggingValue" :candidate-data="paginatedCandidates" :table-headers="tableHeaders"
+      @open-edit-modal="openEditModal" />
   </div>
-  <popup-candidate v-if="isOpenModal" @close-modal=closeModal @active-toast="activeToast" />
+
+  <!-- Popup for Add/Edit candidate:
+       - shown when isOpenModal is true
+       - receives title, action, id and form data
+       - emits close-modal and active-toast events -->
+  <popup-candidate v-if="isOpenModal" :title="popupTitle" :candidate-id="candidateId" :action="popupAction"
+    :form-cadidate="formCadidate" @close-modal=closeModal @active-toast="activeToast" />
+
+  <!-- Toast for feedback, controlled by isActiveToast -->
   <toast-candidate v-show="isActiveToast" state-toast="success" header-toast="Thông tin" content-toast="Thông báo!" />
 </template>
+
 <script setup>
-import { ref } from 'vue';
+import { ref, watch } from 'vue';
 import PopupCandidate from '@/views/candidate/form/MsPopupCandidate.vue';
 import MsInput from '@/components/ms-input/MsInput.vue';
-import MsTable  from '@/components/ms-table/ms-table.vue';
+import MsTable from '@/components/ms-table/MsTable.vue';
 import { pushDataCandidate } from '@/services/fetchCandidate.js';
 import ToastCandidate from '@/components/ms-toast/MsToast.vue';
 
-const candidateData = pushDataCandidate();
-const isActiveToast = ref(false);
-const search = ref('');
-const isOpenModal = ref(false);
+//
+// Reactive state definitions
+//
+const tableHeaders = ref([
+  // Table header labels shown in ms-table
+  "Họ và tên",
+  "Số điện thoại",
+  "Email",
+  "Chiến dịch tuyển dụng",
+  "Vị trí tuyển dụng",
+  "Tin Tuyển dụng",
+  "Vòng tuyển dụng",
+  "Đánh giá",
+  "Ngày tuyển dụng",
+  "Nguồn Ứng viên",
+  "Trình độ đào tạo",
+  "Nơi đào tạo",
+  "Chuyên ngành",
+  "Nơi làm việc gần đây",
+  "Đơn vị sử dụng",
+  "Phù Hợp với chân dung",
+  "Khu vực",
+  "Người giới thiệu",
+  "Thông tin tiếp nhận",
+  "Thuộc kho tiềm năng",
+  "Tài khoản cổng ứng viên",
+  "Thẻ",
+  "Trạng thái",
+  "Giới tính",
+  "Ngày sinh",
+  "Địa chỉ",
+  "Lý do loại",
+  "Cộng tác viên",
+  "Ngày tiếp nhận",
+  "Trạng thái mời nhận việc",
+])
+
+// Form model passed to popup (used for Add and Edit)
+const formCadidate = ref({
+  candidateName: '',
+  birthday: null,
+  gender: null,
+  areaName: '',
+  mobile: '',
+  email: '',
+  address: '',
+  educationDegreeName: '',
+  educationPlaceName: '',
+  educationMajorName: '',
+  applyDate: new Date(),
+  channelName: '',
+  collaboratorName: '',
+  workPlaceRecent: '',
+  jobPositionName: ''
+});
+
+// Source candidate data (mock or fetched)
+const candidateData = ref(pushDataCandidate());
+
+// UI state
+const isActiveToast = ref(false);     // controls toast visibility
+const popupAction = ref('Add');       // 'Add' | 'Edit'
+const popupTitle = ref('Thêm mới');   // title shown in popup
+const paggingValue = ref(25);         // number of rows to show in table
+const candidateId = ref(-1);          // index/id of candidate being edited
+const search = ref('');               // search query (not yet used for filtering)
+const isOpenModal = ref(false);       // controls popup visibility
+
+// Current paginated subset of candidateData shown in table
+const paginatedCandidates = ref(candidateData.value);
+
+// Watch for changes in paggingValue to update paginatedCandidates
+watch(paggingValue, (newVal) => {
+  paginatedCandidates.value = candidateData.value.slice(0, newVal);
+});
+
+//
+// UI helpers and modal handlers
+//
+
+// Show a temporary toast message
 const activeToast = () => {
   isActiveToast.value = true;
   setTimeout(() => {
     isActiveToast.value = false;
   }, 2000);
 };
+
+// Open Add modal and reset state accordingly
 const openModal = () => {
+  popupAction.value = 'Add';
+  popupTitle.value = 'Thêm mới';
   isOpenModal.value = true;
 };
+
+// Open Edit modal and populate formCadidate with selected candidate data
+// `id` is expected to be the index of candidate in candidateData
+const openEditModal = (id) => {
+  popupAction.value = 'Edit';
+  popupTitle.value = 'Chỉnh sửa';
+  candidateId.value = id;
+
+  // Map candidateData fields to form model (guarding types where needed)
+  formCadidate.value.candidateName = candidateData.value[id].CandidateName;
+  formCadidate.value.birthday = new Date(candidateData.value[id].Birthday);
+  formCadidate.value.gender = candidateData.value[id].Gender;
+  formCadidate.value.areaName = candidateData.value[id].AreaName;
+  formCadidate.value.mobile = candidateData.value[id].Mobile;
+  formCadidate.value.email = candidateData.value[id].Email;
+  formCadidate.value.address = candidateData.value[id].Address;
+  formCadidate.value.educationDegreeName = candidateData.value[id].EducationDegreeName;
+  formCadidate.value.educationPlaceName = candidateData.value[id].EducationPlaceName;
+  formCadidate.value.educationMajorName = candidateData.value[id].EducationMajorName;
+  formCadidate.value.applyDate = new Date(candidateData.value[id].ApplyDate);
+  formCadidate.value.channelName = candidateData.value[id].ChannelName;
+  formCadidate.value.collaboratorName = candidateData.value[id].CollaboratorName;
+  formCadidate.value.workPlaceRecent = candidateData.value[id].WorkPlaceRecent;
+  formCadidate.value.jobPositionName = candidateData.value[id].JobPositionName;
+
+  isOpenModal.value = true;
+}
+
+// Close modal and reset form model; refresh candidateData from source
 const closeModal = () => {
   isOpenModal.value = false;
-
+  formCadidate.value = {
+    candidateName: '',
+    birthday: null,
+    gender: null,
+    areaName: '',
+    mobile: '',
+    email: '',
+    address: '',
+    educationDegreeName: '',
+    educationPlaceName: '',
+    educationMajorName: '',
+    applyDate: new Date(),
+    channelName: '',
+    collaboratorName: '',
+    workPlaceRecent: '',
+    jobPositionName: ''
+  };
+  // Re-load candidate list (pushDataCandidate may return updated list)
+  candidateData.value = pushDataCandidate();
 };
 
 </script>
 
 <style scoped>
+/* Layout and visual styles for the Candidates view */
 .main-title {
   height: 30px;
 }
@@ -184,6 +231,7 @@ const closeModal = () => {
   margin: 24px 0;
 }
 
+/* Header that contains search and quick actions */
 .main-table-header {
   /* gap: 8px; */
   padding: 16px 0;
@@ -203,10 +251,12 @@ const closeModal = () => {
 }
 
 .main-table-header .icon {
+  /* icon styling (color via border used as mask) */
   /* padding: 5px; */
   border: 8px solid #7a8188;
 }
 
+/* Create button styles */
 .btn-create-employee {
   background-color: #0078d4;
   color: white;
@@ -226,3 +276,4 @@ const closeModal = () => {
   margin: 0 10px;
 }
 </style>
+// ...existing code...

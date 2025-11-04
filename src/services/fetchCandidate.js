@@ -8,17 +8,8 @@ function pushDataCandidate() {
     const data = JSON.parse(localStorage.getItem('candidateData'))
     return data
   }
-
   localStorage.setItem('candidateData', JSON.stringify(candidateData))
-  return JSON.stringify(candidateData)
-  // Nếu chưa có dữ liệu, lấy từ candidate.json và lưu vào localStorage
-  // fetch('@/assets/data/candidate.json')
-  //   .then((response) => response?.json()) // chuyển body -> object
-  //   .then((data) => {
-  //     localStorage.setItem('candidateData', JSON.stringify(data))
-  //     return data
-  //   })
-  //   .catch((error) => console.error('Lỗi khi tải JSON:', error))
+  return JSON.parse(JSON.stringify(candidateData))
 }
 
 export { pushDataCandidate }

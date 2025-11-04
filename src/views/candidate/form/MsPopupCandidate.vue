@@ -1,6 +1,6 @@
 <template>
   <div>
-    <modal-popup :title="'Thêm ứng viên'" @close-modal="closeModal" @save-data="saveData">
+    <modal-popup :title="title" @close-modal="closeModal" @save-data="saveData">
       <!-- <template #title></template> -->
       <template #content>
         <div class="popup-content-fullname popup-input">
@@ -25,7 +25,7 @@
             <div class="input-icon w-100">
               <!-- <DatePicker v-model="formCadidate.birthday" class="h-32px" date-format="dd/mm/yy" placeholder="dd/MM/yyyy"
                 show-icon fluid /> -->
-                <date-picker v-model="formCadidate.birthday"/>
+              <date-picker v-model="formCadidate.birthday" fluid place-holder="dd/MM/yyyy" />
             </div>
           </div>
           <div class="popup-input popup-content-gender w-100">
@@ -134,9 +134,9 @@
               <span>*</span>
             </div>
             <div class="input-icon input-icon-left">
-              <input v-model="formCadidate.applyDate" id="applyDate" class="h-32px" type="text"
-                placeholder="Chọn ngày ứng tuyển" />
-              <div class="icon-right icon icon-down"></div>
+              <!-- <input v-model="formCadidate.applyDate" id="applyDate" class="h-32px" type="text" placeholder="Chọn ngày ứng tuyển" /> -->
+              <date-picker v-model="formCadidate.applyDate" place-holder="Chọn ngày ứng tuyển" class="w-100" />
+              <!-- <div class="icon-right icon icon-down"></div> -->
             </div>
           </div>
           <div class="popup-input content-nguonungvien w-100">
@@ -257,34 +257,61 @@
 
 <script setup>
 import ModalPopup from '@/components/ms-popup/MsPopup.vue';
-import { ref } from 'vue';
 import { listGender } from '@/utils/constants.js'
 import Select from 'primevue/select';
-import DatePicker from '@/components/ms-datepicker/MSDatepicker.vue';
+import DatePicker from '@/components/ms-datepicker/MsDatepicker.vue';
+import { ref } from 'vue';
 
-const emit = defineEmits(['closeModal', 'activeToast']);
+const emit = defineEmits(['closeModal', 'activeToast', 'openEditModal']);
+const props = defineProps({
+  title: {
+    type: String,
+    default: 'Thêm ứng viên'
+  },
+  action: {
+    type: String,
+    default: 'Add'
+  },
+  formCadidate: {
+    type: Object,
+    default: () => ({})
+  },
+  candidateId: {
+    type: Number,
+    default: -1
+  }
+});
+
 const closeModal = () => {
   emit('closeModal');
 };
 
-const formCadidate = ref({
-  candidateName: '',
-  birthday: new Date(),
-  gender: null,
-  areaName: '',
-  mobile: '',
-  email: '',
-  address: '',
-  educationDegreeName: '',
-  educationPlaceName: '',
-  educationMajorName: '',
-  applyDate: '',
-  channelName: '',
-  collaboratorName: '',
-  workPlaceRecent: '',
-  jobPositionName: ''
-});
+// const handleEditCandidate = (candidateId) => {
+//   emit('openEditModal', candidateId);
+// };
 
+const formCadidate = ref(
+  {
+    candidateName: props.formCadidate.candidateName,
+    birthday: props.formCadidate.birthday,
+    gender: props.formCadidate.gender,
+    areaName: props.formCadidate.areaName,
+    mobile: props.formCadidate.mobile,
+    email: props.formCadidate.email,
+    address: props.formCadidate.address,
+    educationDegreeName: props.formCadidate.educationDegreeName,
+    EducationPlaceeducationPlaceNameName: props.formCadidate.educationPlaceName,
+    educationMajorName: props.formCadidate.educationMajorName,
+    applyDate: props.formCadidate.applyDate,
+    channelName: props.formCadidate.channelName,
+    collaboratorName: props.formCadidate.collaboratorName,
+    workPlaceRecent: props.formCadidate.workPlaceRecent,
+    jobPositionName: props.formCadidate.jobPositionName
+  }
+)
+/**
+ * 
+ */
 const saveData = () => {
   const data = {
     CandidateName: formCadidate.value.candidateName,
@@ -304,13 +331,35 @@ const saveData = () => {
     JobPositionName: formCadidate.value.jobPositionName
   }
 
-  console.log(data);
-
-  // const candidateData = localStorage.getItem('candidateData') ? JSON.parse(localStorage.getItem('candidateData')) : [];
-  // candidateData.unshift(data);
-  // localStorage.setItem('candidateData', JSON.stringify(candidateData));
-  // closeModal();
-  // emit('activeToast');
+  if (props.action === 'Add') {
+    const candidateData = localStorage.getItem('candidateData') ? JSON.parse(localStorage.getItem('candidateData')) : [];
+    candidateData.unshift(data);
+    localStorage.setItem('candidateData', JSON.stringify(candidateData));
+    emit('activeToast');
+  }
+  else if (props.action === 'Edit') {
+    const candidateData = localStorage.getItem('candidateData') ? JSON.parse(localStorage.getItem('candidateData')) : [];
+    candidateData[props.candidateId].CandidateName = data.CandidateName;
+    candidateData[props.candidateId].Birthday = data.Birthday;
+    // localStorage.setItem('candidateData', JSON.stringify(candidateData));
+    candidateData[props.candidateId].Gender = data.Gender;
+    candidateData[props.candidateId].AreaName = data.AreaName;
+    candidateData[props.candidateId].Mobile = data.Mobile;
+    candidateData[props.candidateId].Email = data.Email;
+    candidateData[props.candidateId].Address = data.Address;
+    candidateData[props.candidateId].EducationDegreeName = data.EducationDegreeName;
+    candidateData[props.candidateId].EducationPlaceName = data.EducationPlaceName;
+    candidateData[props.candidateId].EducationMajorName = data.EducationMajorName;
+    candidateData[props.candidateId].ApplyDate = new Date(data.ApplyDate);
+    candidateData[props.candidateId].ChannelName = data.ChannelName;
+    candidateData[props.candidateId].CollaboratorName = data.CollaboratorName;
+    candidateData[props.candidateId].WorkPlaceRecent = data.WorkPlaceRecent;
+    candidateData[props.candidateId].JobPositionName = data.JobPositionName;
+    console.log('candidateData', candidateData);
+    localStorage.setItem('candidateData', JSON.stringify(candidateData));
+    emit('activeToast');
+  }
+  closeModal();
 };
 
 </script>

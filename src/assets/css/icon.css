@@ -154,3 +154,15 @@
   width: 16px;
   height: 16px;
 }
+.icon-arrow-right {
+  mask-position: -220px -141px;
+  background-color: #7a8188;
+  width: 16px;
+  height: 16px;
+}
+.icon-arrow-left {
+  mask-position: -199px -141px;
+  background-color: #7a8188;
+  width: 16px;
+  height: 16px;
+}

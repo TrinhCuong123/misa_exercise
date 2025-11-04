@@ -1,12 +1,20 @@
 <template>
-  <div class="ms-datepicker">
-    <DatePicker v-model="dateModel" class="h-32px" date-format="dd/mm/yy" placeholder="dd/MM/yyyy" show-icon fluid />
+  <div>
+    <DatePicker v-model="dateModel" panelClass="ms-datepicker" class="h-32px" date-format="dd/mm/yy" :placeholder="placeHolder" show-icon fluid />
   </div>
 </template>
 
 <script setup>
 import DatePicker from 'primevue/datepicker';
 const dateModel = defineModel();
+
+defineProps({
+  placeHolder: {
+    type: String,
+    default: ''
+  }
+})
+
 </script>
 
 <style>

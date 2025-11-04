@@ -4,36 +4,9 @@
       <thead>
         <tr>
           <th><input type="checkbox" /></th>
-          <th>Họ và tên</th>
-          <th>Số điện thoại</th>
-          <th>Email</th>
-          <th>Chiến dịch tuyển dụng</th>
-          <th>Vị trí tuyển dụng</th>
-          <th>Tin Tuyển dụng</th>
-          <th>Vòng tuyển dụng</th>
-          <th>Đánh giá</th>
-          <th>Ngày tuyển dụng</th>
-          <th>Nguồn Ứng viên</th>
-          <th>Trình độ đào tạo</th>
-          <th>Nơi đào tạo</th>
-          <th>Chuyên ngành</th>
-          <th>Nơi làm việc gần đây</th>
-          <th>Đơn vị sử dụng</th>
-          <th>Phù Hợp với chân dung</th>
-          <th>Khu vực</th>
-          <th>Người giới thiệu</th>
-          <th>Thông tin tiếp nhận</th>
-          <th>Thuộc kho tiềm năng</th>
-          <th>Tài khoản cổng ứng viên</th>
-          <th>Thẻ</th>
-          <th>Trạng thái</th>
-          <th>Giới tính</th>
-          <th>Ngày sinh</th>
-          <th>Địa chỉ</th>
-          <th>Lý do loại</th>
-          <th>Cộng tác viên</th>
-          <th>Ngày tiếp nhận</th>
-          <th>Trạng thái mời nhận việc</th>
+          <th v-for="tableHeader in tableHeaders" :key="tableHeader">
+            {{ tableHeader }}
+          </th>
         </tr>
       </thead>
       <tbody>
@@ -86,7 +59,7 @@
           <td>{{ formatOfferStatus(candidate.OfferStatus) }}</td>
           <td class="action-cell">
             <div class="action-buttons d-flex">
-              <button class="btn-edit" aria-label="Sửa">
+              <button class="btn-edit" aria-label="Sửa" @click="handleEditCandidate(index)">
                 <div class="icon__right icon icon-update"></div>
               </button>
               <button class="btn-delete" aria-label="Xóa">
@@ -98,23 +71,50 @@
       </tbody>
     </table>
   </div>
-  <div class="main-table-footer d-flex justify-space-between">
-    <div class="footer-sum-record">Tổng: <b>{{ candidateData.length }}</b> bản ghi</div>
-    <div class="footer-pagging">Số bản ghi/trang</div>
+  <div class="main-table-footer d-flex justify-space-between align-center">
+    <div class="footer-sum-record font-14px">Tổng: <b>{{ candidateData.length }}</b> bản ghi</div>
+    <div class="footer-pagging d-flex align-center">
+      <div class="mr-10">
+        Số bản ghi/trang
+      </div>
+      <ms-select v-model="paggingValue" :pagging-options="paggingOptions" class="paging-selector" />
+      <div class="mr-10">
+        1 - 25 bản ghi
+      </div>
+      <div class="icon icon-arrow-left cursor-pointer mr-10"></div>
+      <div class="icon icon-arrow-right cursor-pointer"></div>
+    </div>
   </div>
 </template>
 
 <script setup>
 import { formatDate, formatGender, checkIsTalentPoolDetail, checkProbationInfoStatus, formatOfferStatus, checkNull, generateAvatar } from '@/utils/formatOutput.js';
+import { paggingOptions } from '@/utils/constants.js';
+import MsSelect from '@/components/ms-selection/MsSelection.vue';
 
 defineProps({
   candidateData: {
     type: Array,
     default: () => []
+  },
+  tableHeaders: {
+    type: Array,
+    default: () => []
   }
 });
 
+const emit = defineEmits(['openEditModal']);
+
+const handleEditCandidate = (candidateId) => {
+  emit('openEditModal', candidateId);
+};
+
+const paggingValue = defineModel();
 // const sumRecord = candidateData?.length;
+
+// const handleFormat = (value, type) => {
+//   switch (type)
+// }
 
 </script>
 
@@ -156,7 +156,9 @@ defineProps({
   display: flex;
   align-items: center;
   padding: 0 20px;
-  height: 30px;
+  height: 60px;
+  color: #1E2633;
+  white-space: nowrap;
 }
 
 /* Table full name column */
@@ -222,5 +224,10 @@ defineProps({
 
 .action-buttons .icon__delete:hover {
   background-color: #d9534f;
+}
+
+.paging-selector {
+  width: 72px;
+  height: 36px;
 }
 </style>
