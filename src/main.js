@@ -3,6 +3,9 @@ import '@/assets/css/iconLink.css'
 import '@/assets/css/icon.css'
 import '@/assets/css/variables.css'
 import '@/assets/css/reset.css'
+import "@fontsource-variable/inter"; // Defaults to wght axis
+import "@fontsource-variable/inter/wght.css"; // Specify axis
+import "@fontsource-variable/inter/wght-italic.css"; // Specify axis and style
 
 import { createApp } from 'vue'
 import App from './App.vue'

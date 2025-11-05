@@ -1,23 +1,35 @@
-<script setup>
-import TheHeader from '@/layouts/TheHeader.vue'
-import TheSidebar from '@/layouts/TheSidebar.vue'
-import TheMain from '@/layouts/TheMain.vue'
-</script>
-
 <template>
-  <!-- Container -->
-  <div class="container d-flex flex-direction-column">
-    <!-- Header -->
-    <the-header />
-    <!-- Main content -->
-    <div class="content w-100 flex1 d-flex">
-      <!-- Sidebar -->
-      <the-sidebar />
-      <!-- Main content -->
-      <the-main />
-    </div>
-  </div>
+  <Suspense>
+    <template #default>
+      <div class="container d-flex flex-direction-column">
+        <the-header />
+        <div class="content w-100 flex1 d-flex">
+          <the-sidebar />
+          <the-main />
+        </div>
+      </div>
+    </template>
+
+    <template #fallback>
+      <the-skeletion-layout />
+    </template>
+  </Suspense>
+
 </template>
+
+<script setup>
+import { defineAsyncComponent } from 'vue'
+import TheSkeletionLayout from './layouts/TheSkeletionLayout.vue'
+const TheHeader = defineAsyncComponent(() =>
+  import('@/layouts/TheHeader.vue')
+)
+const TheSidebar = defineAsyncComponent(() =>
+  import('@/layouts/TheSidebar.vue')
+)
+const TheMain = defineAsyncComponent(() =>
+  import('@/layouts/TheMain.vue')
+)
+</script>
 
 <style scoped>
 .content {
