@@ -1,0 +1,233 @@
+/* Icon croped by svg */
+.icon {
+  mask-image: url('../icons/ICON.svg');
+  mask-repeat: no-repeat;
+  background-color: #f0f0f0;
+  width: 20px;
+  height: 20px;
+}
+
+.icon-user {
+  mask-position: -6px -114px;
+}
+
+.icon-add {
+  mask-position: -6px -114px;
+  width: 24px;
+  height: 24px;
+}
+
+.icon-global {
+  mask-position: 0px -608px;
+  background-color: #7a8188;
+}
+
+/*Icon sidebar*/
+.icon-recruitment-news {
+  /* tin tuyển dụng */
+  mask-position: -138px -676px;
+  background-color: #7a8188;
+}
+
+.icon-candidate {
+  /* ứng viên */
+  mask-position: -25px -114px;
+  background-color: #7a8188;
+}
+
+.icon-calendar {
+  /* lịch */
+  mask-position: -145px -113px;
+  background-color: #7a8188;
+}
+
+.icon-potential-pool {
+  /* kho tiềm năng */
+  mask-position: -2px -114px;
+  background-color: #7a8188;
+}
+
+.icon-recruitment-campaign {
+  /* chiến dịch tuyển dụng */
+  mask-position: -73px -633px;
+  background-color: #7a8188;
+}
+
+.icon-job {
+  /* công việc */
+  mask-position: -95px -848px;
+  background-color: #7a8188;
+}
+
+.icon-ai-marketing {
+  /* AI marketing */
+  mask-position: -258px -654px;
+  background-color: #7a8188;
+}
+
+.icon-candidate-chat {
+  /* trao đổi ứng viên */
+  mask-position: -145px -609px;
+  background-color: #7a8188;
+}
+
+.icon-report {
+  /* báo cáo */
+  mask-position: -74px -114px;
+  background-color: #7a8188;
+}
+
+.icon-settings {
+  /* thiết lập */
+  mask-position: -2px -138px;
+  background-color: #7a8188;
+}
+
+.icon-collapse {
+  /* thu gọn */
+  mask-position: -78px -676px;
+  background-color: #7a8188;
+}
+
+.icon-filter {
+  mask-position: -39px -655.5px;
+  background-color: #7a8188;
+}
+.icon-out {
+  mask-position: -60px -656px;
+  background-color: #7a8188;
+}
+.icon-quickactive {
+  mask-position: -2px -847px;
+  background-color: #7a8188;
+}
+.icon-plus {
+  mask-position: -20px -656px;
+  background-color: #ffffff;
+  width: 20px;
+  height: 20px;
+}
+.icon-down {
+  mask-position: -32px -48px;
+  background-color: #ffffff;
+  width: 16px;
+  height: 16px;
+}
+.icon-search {
+  mask-position: -283px -945px;
+  background-color: #7a8188;
+  width: 16px;
+  height: 16px;
+}
+.icon-close {
+  mask-position: -174px -80px;
+  background-color: #7a8188;
+  width: 18px;
+  height: 18px;
+}
+.icon-dot {
+  mask-position: -102px -86px;
+  background-color: #7a8188;
+  width: 6px;
+  height: 6px;
+}
+.icon-update {
+  mask-position: -1px 1px;
+  background-color: #7a8188;
+  width: 16px;
+  height: 16px;
+}
+.icon-delete {
+  mask-position: -222px -658px;
+  background-color: #7a8188;
+  width: 16px;
+  height: 16px;
+}
+.icon-success {
+  mask-position: -205px -32px;
+  background-color: #7a8188;
+  width: 16px;
+  height: 16px;
+}
+.icon-info {
+  mask-position: -192px -49px;
+  background-color: #7a8188;
+  width: 16px;
+  height: 16px;
+}
+.icon-arrow-right {
+  mask-position: -220px -141px;
+  background-color: #7a8188;
+  width: 16px;
+  height: 16px;
+}
+.icon-arrow-left {
+  mask-position: -199px -141px;
+  background-color: #7a8188;
+  width: 16px;
+  height: 16px;
+}
+
+
+
+
+
+
+/* Icon get to file svg */
+.icon-link {
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 24px;
+  height: 24px;
+}
+
+.icon-logo {
+  background-image: url('../icons/icon-users.svg');
+  width: 32px;
+  height: 32px;
+}
+
+.icon-switch {
+  background-image: url('../icons/icon-switch.svg');
+}
+
+.icon-notifi {
+  background-image: url('../icons/icon-notifi.svg');
+}
+.icon-cart {
+  background-image: url('../icons/icon-cart.svg');
+}
+.icon-message {
+  background-image: url('../icons/icon-message.svg');
+}
+.icon-ring {
+  background-image: url('../icons/icon-ring.svg');
+}
+.icon-helpmenu {
+  background-image: url('../icons/icon-helpmenu.svg');
+}
+.icon-moremenu {
+  background-image: url('../icons/icon-moremenu.svg');
+}
+.icon-knowledge {
+  background-image: url('../icons/icon-knowledge.svg');
+}
+.icon-ngcontent {
+  background-image: url('../icons/icon-ngcontent.svg');
+  width: 32px;
+  height: 32px;
+}
+.icon-avatar {
+  background-image: url('../icons/icon-avatar.png');
+  border-radius: 50%;
+  object-fit: cover;
+  width: 32px;
+  height: 32px;
+}
+.icon-user {
+  background-image: url('../icons/icon-avatar.png');
+  border-radius: 50%;
+  object-fit: cover;
+  width: 20x;
+  height: 20px;
+}

@@ -1,0 +1,51 @@
+/* Flex box */
+.d-flex {
+  display: flex;
+}
+
+.flex1 {
+  flex: 1;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+/* Justify content */
+.justify-center {
+  justify-content: center;
+}
+
+.justify-space-between {
+  justify-content: space-between;
+}
+
+/* Align Item */
+.align-center {
+  align-items: center;
+}
+
+
+
+/* Margin */
+.mr-10px {
+  margin-right: 10px;
+}
+.mr-8px {
+  margin-right: 8px;
+}
+
+/* Width */
+.w-100-percent {
+  width: 100%;
+}
+
+/* Height */
+.h-100-percent {
+  height: 100%;
+}
+
+/* Poiter */
+.cursor-pointer {
+  cursor: pointer;
+}
