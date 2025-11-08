@@ -1,6 +1,6 @@
 /* Icon croped by svg */
 .icon {
-  mask-image: url('../icons/ICON.svg');
+  mask-image: url("../icons/ICON.svg");
   mask-repeat: no-repeat;
   background-color: #f0f0f0;
   width: 20px;
@@ -168,11 +168,6 @@
   height: 16px;
 }
 
-
-
-
-
-
 /* Icon get to file svg */
 .icon-link {
   background-repeat: no-repeat;
@@ -182,50 +177,55 @@
 }
 
 .icon-logo {
-  background-image: url('../icons/icon-users.svg');
+  background-image: url("../icons/icon-users.svg");
   width: 32px;
   height: 32px;
 }
 
 .icon-switch {
-  background-image: url('../icons/icon-switch.svg');
+  background-image: url("../icons/icon-switch.svg");
 }
 
 .icon-notifi {
-  background-image: url('../icons/icon-notifi.svg');
+  background-image: url("../icons/icon-notifi.svg");
 }
 .icon-cart {
-  background-image: url('../icons/icon-cart.svg');
+  background-image: url("../icons/icon-cart.svg");
+  width: 20px;
+  height: 20px;
 }
 .icon-message {
-  background-image: url('../icons/icon-message.svg');
+  background-image: url("../icons/icon-message.svg");
 }
 .icon-ring {
-  background-image: url('../icons/icon-ring.svg');
+  background-image: url("../icons/icon-ring.svg");
 }
 .icon-helpmenu {
-  background-image: url('../icons/icon-helpmenu.svg');
+  background-image: url("../icons/icon-helpmenu.svg");
 }
 .icon-moremenu {
-  background-image: url('../icons/icon-moremenu.svg');
+  background-image: url("../icons/icon-moremenu.svg");
 }
 .icon-knowledge {
-  background-image: url('../icons/icon-knowledge.svg');
+  background-image: url("../icons/icon-knowledge.svg");
+}
+.icon-invite {
+  background-image: url("../icons/icon-invite.svg");
 }
 .icon-ngcontent {
-  background-image: url('../icons/icon-ngcontent.svg');
+  background-image: url("../icons/icon-ngcontent.svg");
   width: 32px;
   height: 32px;
 }
 .icon-avatar {
-  background-image: url('../icons/icon-avatar.png');
+  background-image: url("../icons/icon-avatar.png");
   border-radius: 50%;
   object-fit: cover;
   width: 32px;
   height: 32px;
 }
 .icon-user {
-  background-image: url('../icons/icon-avatar.png');
+  background-image: url("../icons/icon-avatar.png");
   border-radius: 50%;
   object-fit: cover;
   width: 20x;

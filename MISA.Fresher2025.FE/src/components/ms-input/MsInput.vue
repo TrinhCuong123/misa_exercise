@@ -2,8 +2,7 @@
   <div>
     <div class="table-header-input">
       <div class="header-input-right icon" :class="icon" v-if="icon"></div>
-      <input :value="modelValue" class="header-left-input" type="text" :placeholder="placeholder" :style="getStyle"
-        @input="updateInputValue" />
+      <input :value="modelValue" class="header-left-input" type="text" :placeholder="placeholder" :style="getStyle"/>
     </div>
   </div>
 </template>
@@ -12,10 +11,6 @@
 import { computed } from 'vue'
 const props = defineProps({
   icon: {
-    type: String,
-    default: ''
-  },
-  modelValue: {
     type: String,
     default: ''
   },
@@ -28,10 +23,7 @@ const props = defineProps({
     default: () => ({})
   }
 })
-const emit = defineEmits(['update:modelValue'])
-const updateInputValue = () => {
-  emit('update:modelValue', props.modelValue)
-}
+const modelValue = defineModel()
 
 const getStyle = computed(() => {
   return {
@@ -48,11 +40,15 @@ const getStyle = computed(() => {
 
 .table-header-input input {
   text-overflow: ellipsis;
-  padding: 2px 0 2px 25px;
+  padding: 2px 0 2px 34px;
   border: 1px solid #dddde4;
   outline: none;
   border-radius: 5px;
   height: 30px;
+}
+.table-header-input input::placeholder {
+  color: #a4acb8;
+  font-weight: 400;
 }
 
 .header-input-right {
@@ -60,7 +56,7 @@ const getStyle = computed(() => {
   z-index: 1;
   width: 16px !important;
   height: 16px !important;
-  left: 8px;
+  left: 9px;
   top: 50%;
   transform: translateY(-50%);
 }
