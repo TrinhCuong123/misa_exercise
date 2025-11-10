@@ -34,7 +34,7 @@ namespace MISA.Fresher2025.Api.Controllers
             // Khai báo thông tin database
             var connectionString = "Host=localhost; Port=3306; Database=misa_sale_order; User=root; Password= 123456;";
 
-            // Khởi tạo kết nối
+            // Khởi tạo kết nối 
             var connection = new MySqlConnection(connectionString);
 
             // Khai báo lệnh truy vấn

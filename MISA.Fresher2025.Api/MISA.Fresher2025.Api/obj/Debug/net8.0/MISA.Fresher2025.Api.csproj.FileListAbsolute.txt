@@ -36,3 +36,4 @@ D:\Fresher Misa\Day_03\MISA.Fresher2025.Api\MISA.Fresher2025.Api\obj\Debug\net8.
 D:\Fresher Misa\Day_03\MISA.Fresher2025.Api\MISA.Fresher2025.Api\obj\Debug\net8.0\MISA.Fresher2025.Api.pdb
 D:\Fresher Misa\Day_03\MISA.Fresher2025.Api\MISA.Fresher2025.Api\obj\Debug\net8.0\MISA.Fresher2025.Api.genruntimeconfig.cache
 D:\Fresher Misa\Day_03\MISA.Fresher2025.Api\MISA.Fresher2025.Api\obj\Debug\net8.0\ref\MISA.Fresher2025.Api.dll
+D:\Fresher Misa\Day_03\MISA.Fresher2025.Api\MISA.Fresher2025.Api\obj\Debug\net8.0\MISA.Fresher2025.Api.sourcelink.json

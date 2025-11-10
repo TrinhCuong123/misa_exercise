@@ -10,8 +10,9 @@ namespace MISA.Fresher2025.Api.Model
         [Key]
         [Column("customer_id")]
         public string? customerId { get; set; }
-        
-        [Column("customer_code")]        
+
+        [Column("customer_code")]
+        [Required(ErrorMessage = "Vui lòng nhập mã nhân viên")]
         public string? customerCode { get; set; }
 
         [Column("customer_name")]

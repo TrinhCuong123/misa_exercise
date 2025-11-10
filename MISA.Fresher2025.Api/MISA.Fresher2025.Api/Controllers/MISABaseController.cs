@@ -13,78 +13,78 @@ namespace MISA.Fresher2025.Api.Controllers
     [ApiController]
     public abstract class MISABaseController<T> : ControllerBase where T : class
     {
+        protected MySqlConnection ConnectionDB()
+        {
+            // Declare database information
+            var connectionString = "Host=localhost; Port=3306; Database=misa_sale_order; User=root; Password=123456;";
+            // Initiate connection
+            return new MySqlConnection(connectionString);
+        }
         /// <summary>
-        /// hàm lấy id
-        /// created by tncuong 20.10.2025
+        /// Function get list customer
+        /// created by tncuong 6.11.2025
         /// </summary>
-        
         [HttpGet]
         public IActionResult Get()
         {
-            // Khai báo thông tin database
-            var connectionString = "Host=localhost; Port=3306; Database=misa_sale_order; User=root; Password= 123456;";
-
-            // Khởi tạo kết nối
-            var connection = new MySqlConnection(connectionString);
-
+            using var connection = ConnectionDB();
             var tableAttr = typeof(T).GetCustomAttribute<TableAttribute>();
             var tableName = tableAttr?.Name ?? typeof(T).Name.ToLower();
-            //var tableName = typeof(T).Name.ToLower();
             var sqlCommand = @$"SELECT * FROM {tableName}";
             var data = connection.Query<T>(sqlCommand);
             return Ok(data);
         }
 
-        // [HttpPost("datatable")]
-        // public IActionResult Datatable(BaseParamDatatable param)
-        // {
-        //     // Khai báo thông tin database
-        //     var connectionString = "Host=localhost; Port=3306; Database=misa_sale_order; User=root; Password= 123456;";
+        /// <summary>
+        /// Function paging data
+        /// created by tncuong 10.11.2025
+        /// </summary>
+        [HttpPost("datatable")]
+        public IActionResult Datatable([FromBody] BaseParamDatatable param, [FromQuery] string[] columnSearch)
+        {
+            using var connection = ConnectionDB();
 
-        //     // Khởi tạo kết nối
-        //     var connection = new MySqlConnection(connectionString);
+            // Get table name from attribute
+            var tableAttr = typeof(T).GetCustomAttribute<TableAttribute>();
+            var tableName = tableAttr?.Name ?? typeof(T).Name.ToLower();
 
-        //     var properties = typeof(T).GetProperties();
-        //     //var tableName = typeof(T).Name.ToLower();
-        //     var tableAttr = typeof(T).GetCustomAttribute<TableAttribute>();
-        //     var tableName = tableAttr?.Name ?? typeof(T).Name.ToLower();
-        //     var columns = "";
-        //     var columnParam = "";
-        //     var parameters = new DynamicParameters();
+            // Build condition
+            string condition = "1=1"; // Default is true
 
-        //     foreach (var property in properties)
-        //     {
-        //         //columns += $"{property.Name},";
-        //         var columnAttr = property.GetCustomAttribute<ColumnAttribute>();
-        //         var columnName = columnAttr?.Name ?? property.Name; // Nếu không có thì lấy property.Name
-        //         columns += $"{columnName},";
-        //         //columns += $"{property.Name},";
-        //         columnParam += $"@{property.Name},";
-        //         parameters.Add($"@{property.Name}", property.GetValue(param.search));
-        //     }
+            // Search when have text
+            if (!string.IsNullOrEmpty(param.search) && columnSearch.Length > 0)
+            {
+                var searchConditions = columnSearch
+                    .Select(c => $"{c} LIKE @searchText");
+                condition += " AND (" + string.Join(" OR ", searchConditions) + ")";
+            }
 
-        //     columns = columns.TrimEnd(',');
-        //     columnParam = columnParam.TrimEnd(',');
+            // Paging
+            var sqlCommand = @$"
+                SELECT * FROM {tableName}
+                WHERE {condition}
+                LIMIT @length OFFSET @start;
+            ";
 
+            // Parameter
+            var res = connection.Query<T>(sqlCommand, new
+            {
+                searchText = $"%{param.search}%",
+                length = param.length,
+                start = param.start
+            });
 
-        //     // Khai báo lệnh truy vấn
-        //     var sqlCommand = @$"INSERT INTO {tableName} ({columns}) VALUES ({columnParam})";
+            return Ok(res);
+        }
 
-        //     // Thực hiện lệch
-        //     var res = connection.Execute(sqlCommand, param: parameters);
-
-        //     return Ok(param);
-        // }
-
+        /// <summary>
+        /// Function create customer
+        /// created by tncuong 6.11.2025
+        /// </summary>
         [HttpPost]
         public IActionResult Create(T entity)
         {
-            // Khai báo thông tin database
-            var connectionString = "Host=localhost; Port=3306; Database=misa_sale_order; User=root; Password= 123456;";
-
-            // Khởi tạo kết nối
-            var connection = new MySqlConnection(connectionString);
-
+            using var connection = ConnectionDB();
             var properties = typeof(T).GetProperties();
             //var tableName = typeof(T).Name.ToLower();
             var tableAttr = typeof(T).GetCustomAttribute<TableAttribute>();
@@ -117,13 +117,14 @@ namespace MISA.Fresher2025.Api.Controllers
             return Ok(res);
         }
 
+        /// <summary>
+        /// Function update customer by ID
+        /// created by tncuong 6.11.2025
+        /// </summary>
         [HttpPut("{id}")]
         public IActionResult Updatex(T entity, string id)
         {
-            // Chuỗi kết nối tới MySQL
-            var connectionString = "Server=localhost;Port=3306;Database=misa_sale_order;Uid=root;Pwd=123456;";
-
-            using var connection = new MySqlConnection(connectionString);
+            using var connection = ConnectionDB();
 
             // Lấy tên bảng (ưu tiên attribute [Table], fallback = tên class)
             var tableAttr = typeof(T).GetCustomAttribute<TableAttribute>();
@@ -175,14 +176,14 @@ namespace MISA.Fresher2025.Api.Controllers
             return Ok(affectedRows);
         }
 
-
+        /// <summary>
+        /// Function delete customer by ID
+        /// created by tncuong 6.11.2025
+        /// </summary>
         [HttpDelete("{id}")]
         public IActionResult Delete(string id)
         {
-            var connectionString = "Host=localhost; Port=3306; Database=misa_sale_order; User=root; Password= 123456;";
-
-            // Khởi tạo kết nối
-            var connection = new MySqlConnection(connectionString);
+            using var connection = ConnectionDB();
 
             var tableAttr = typeof(T).GetCustomAttribute<TableAttribute>();
             var tableName = tableAttr?.Name ?? typeof(T).Name.ToLower();

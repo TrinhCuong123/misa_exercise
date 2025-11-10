@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Fresher Misa\\Day_03\\MISA.Fresher2025.Api\\MISA.Fresher2025.Api\\MISA.Fresher2025.Api.csproj": {}
+    "d:\\Fresher Misa\\Day_03\\MISA.Fresher2025.Api\\MISA.Fresher2025.Api\\MISA.Fresher2025.Api.csproj": {}
   },
   "projects": {
-    "D:\\Fresher Misa\\Day_03\\MISA.Fresher2025.Api\\MISA.Fresher2025.Api\\MISA.Fresher2025.Api.csproj": {
+    "d:\\Fresher Misa\\Day_03\\MISA.Fresher2025.Api\\MISA.Fresher2025.Api\\MISA.Fresher2025.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Fresher Misa\\Day_03\\MISA.Fresher2025.Api\\MISA.Fresher2025.Api\\MISA.Fresher2025.Api.csproj",
+        "projectUniqueName": "d:\\Fresher Misa\\Day_03\\MISA.Fresher2025.Api\\MISA.Fresher2025.Api\\MISA.Fresher2025.Api.csproj",
         "projectName": "MISA.Fresher2025.Api",
-        "projectPath": "D:\\Fresher Misa\\Day_03\\MISA.Fresher2025.Api\\MISA.Fresher2025.Api\\MISA.Fresher2025.Api.csproj",
+        "projectPath": "d:\\Fresher Misa\\Day_03\\MISA.Fresher2025.Api\\MISA.Fresher2025.Api\\MISA.Fresher2025.Api.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\Fresher Misa\\Day_03\\MISA.Fresher2025.Api\\MISA.Fresher2025.Api\\obj\\",
+        "outputPath": "d:\\Fresher Misa\\Day_03\\MISA.Fresher2025.Api\\MISA.Fresher2025.Api\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

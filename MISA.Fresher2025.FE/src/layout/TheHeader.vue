@@ -73,6 +73,13 @@ watch(search, (newval) => {
   margin-right: 20px;
 }
 
+.recruitment-page:hover {
+  color: #2a7efc;
+}
+.recruitment-page:hover .icon-global {
+  background-color: #2a7efc;
+}
+
 .recruitment-page .icon-global {
   margin-right: 10px;
 }

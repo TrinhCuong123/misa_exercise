@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MISA.Fresher2025.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8d59e6f8cae0052bdad710c8899f70b7e5b5e812")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e6f1096ea6ffa34f4c3e4e43d546421be0e845a6")]
 [assembly: System.Reflection.AssemblyProductAttribute("MISA.Fresher2025.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MISA.Fresher2025.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

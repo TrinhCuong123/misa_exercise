@@ -25,14 +25,18 @@
 /*Icon sidebar*/
 .icon-recruitment-news {
   /* tin tuyển dụng */
-  mask-position: -138px -676px;
+  mask-position: -96px -112px;
   background-color: #7a8188;
+  width: 24px;
+  height: 24px;
 }
 
 .icon-candidate {
   /* ứng viên */
-  mask-position: -25px -114px;
+  mask-position: -24px -112px;
   background-color: #7a8188;
+  width: 24px;
+  height: 24px;
 }
 
 .icon-calendar {
@@ -43,8 +47,10 @@
 
 .icon-potential-pool {
   /* kho tiềm năng */
-  mask-position: -2px -114px;
+  mask-position: -2px -111px;
   background-color: #7a8188;
+  width: 24px;
+  height: 24px;
 }
 
 .icon-recruitment-campaign {
@@ -166,6 +172,12 @@
   background-color: #7a8188;
   width: 16px;
   height: 16px;
+}
+.icon-left {
+  mask-position: -60px -696px;
+  background-color: #7a8188;
+  width: 20px;
+  height: 20px;
 }
 
 /* Icon get to file svg */
