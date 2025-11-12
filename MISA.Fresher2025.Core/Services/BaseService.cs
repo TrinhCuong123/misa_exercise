@@ -37,7 +37,7 @@ namespace MISA.Fresher2025.Core.Services
             _repository.Delete(id);
         }
 
-        public bool validateDate(T entity)
+        public bool validateData(T entity)
         {
             var properties = typeof(T).GetProperties();
 
