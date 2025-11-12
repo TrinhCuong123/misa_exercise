@@ -10,6 +10,18 @@ x86/
 [Aa][Rr][Mm]/
 [Aa][Rr][Mm]64/
 
+# Build output
+[Bb]in/
+[Oo]bj/
+*.dll
+*.exe
+*.pdb
+*.cache
+*.log
+*.vs/
+.vscode/
+
+
 ## User-specific files
 *.suo
 *.user
