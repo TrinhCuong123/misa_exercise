@@ -1,0 +1,166 @@
+## Build Folders (bin and obj)
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+
+## User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.vs/
+.vscode/
+.idea/
+
+## Test results
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+*.VisualState.xml
+*.coverage
+*.coveragexml
+*.nunit.xml
+
+## NuGet Packages
+*.nupkg
+*.snupkg
+*.nuspec
+*.psmdcp
+*.package*
+*.publish.xml
+*.publishproj
+*.cache
+packages/
+# Uncomment if you have local NuGet feed
+# *.nupkg
+
+## Visual Studio cache
+.vs/
+.vscode/
+*.dbmdl
+*.jfm
+*.ipch
+*.opendb
+*.VC.db
+*.VC.VC.opendb
+
+## Entity Framework Migrations backups
+*Migrations/obj/
+*.Designer.cs
+
+## ASP.NET temp files
+App_Data/
+*.log
+*.tmp
+*.bak
+*.swp
+*.swo
+*.orig
+
+## Build results
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+## Publish output
+publish/
+dist/
+out/
+Generated_Code/
+
+## Rider
+.idea/
+*.sln.iml
+
+## Resharper
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+
+## JetBrains Rider
+.idea/
+*.sln.iml
+
+## DotCover
+*.dotCover
+
+## Visual Studio for Mac
+*.pidb
+*.userprefs
+
+## Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+## Mac junk
+.DS_Store
+.AppleDouble
+.LSOverride
+
+## Linux junk
+*~
+# temporary files
+*.swp
+
+## dotenv / secrets
+*.env
+*.env.local
+*.env.*.local
+secrets.json
+appsettings.Development.json
+appsettings.Local.json
+appsettings.*.local.json
+
+## Certificates
+*.pfx
+*.p12
+*.cer
+*.key
+
+## Rider / JetBrains
+.idea/
+*.sln.iml
+
+## Azure
+*.PublishSettings
+*.azurePubxml
+ServiceDependencies.json
+ServiceDependencies.*.json
+ServiceConfiguration.*
+PublishScripts/
+
+## Docker
+**/Dockerfile*
+**/docker-compose*
+.dockerignore
+
+## Logs
+*.log
+logs/
+Logs/
+log/
+
+## Coverage & Analysis
+*.coverage
+*.coveragexml
+*.codecov
+*.opencover.xml
+coverage-report/
+coverage/
+TestResults/
+
+## Others
+bin/
+obj/
+tmp/
+temp/
+node_modules/
+wwwroot/lib/
+wwwroot/dist/
+bower_components/
