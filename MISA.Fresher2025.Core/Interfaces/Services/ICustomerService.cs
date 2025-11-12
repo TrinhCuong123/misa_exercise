@@ -1,0 +1,19 @@
+﻿using MISA.Fresher2025.Core.Entities;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace MISA.Fresher2025.Core.Interfaces.Services
+{
+    public interface ICustomerService
+    {
+        List<Customer> GetCustomers();
+        Customer Insert(Customer customer);
+        Customer Update(Customer customer);
+
+        void Import(List<Customer> customerList);
+
+    }
+}

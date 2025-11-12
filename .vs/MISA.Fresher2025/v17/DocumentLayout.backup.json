@@ -1,0 +1,240 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Fresher Misa\\Day_Final\\MISA.Fresher2025\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6AE693B1-C1CB-49B1-BA31-5858CB548454}|MISA.Fresher2025.API\\MISA.Fresher2025.API.csproj|d:\\fresher misa\\day_final\\misa.fresher2025\\misa.fresher2025.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6AE693B1-C1CB-49B1-BA31-5858CB548454}|MISA.Fresher2025.API\\MISA.Fresher2025.API.csproj|solutionrelative:misa.fresher2025.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{45DE236F-11E7-468C-9ED8-44E42308484A}|MISA.Fresher2025.Infrastructure\\MISA.Fresher2025.Infrastructure.csproj|d:\\fresher misa\\day_final\\misa.fresher2025\\misa.fresher2025.infrastructure\\repository\\baserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{45DE236F-11E7-468C-9ED8-44E42308484A}|MISA.Fresher2025.Infrastructure\\MISA.Fresher2025.Infrastructure.csproj|solutionrelative:misa.fresher2025.infrastructure\\repository\\baserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F215B224-DB59-4AE1-B2E7-D8BA3FA0FAE9}|MISA.Fresher2025.Core\\MISA.Fresher2025.Core.csproj|d:\\fresher misa\\day_final\\misa.fresher2025\\misa.fresher2025.core\\services\\employeeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F215B224-DB59-4AE1-B2E7-D8BA3FA0FAE9}|MISA.Fresher2025.Core\\MISA.Fresher2025.Core.csproj|solutionrelative:misa.fresher2025.core\\services\\employeeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F215B224-DB59-4AE1-B2E7-D8BA3FA0FAE9}|MISA.Fresher2025.Core\\MISA.Fresher2025.Core.csproj|d:\\fresher misa\\day_final\\misa.fresher2025\\misa.fresher2025.core\\interfaces\\services\\iemployeeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F215B224-DB59-4AE1-B2E7-D8BA3FA0FAE9}|MISA.Fresher2025.Core\\MISA.Fresher2025.Core.csproj|solutionrelative:misa.fresher2025.core\\interfaces\\services\\iemployeeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F215B224-DB59-4AE1-B2E7-D8BA3FA0FAE9}|MISA.Fresher2025.Core\\MISA.Fresher2025.Core.csproj|d:\\fresher misa\\day_final\\misa.fresher2025\\misa.fresher2025.core\\services\\baseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F215B224-DB59-4AE1-B2E7-D8BA3FA0FAE9}|MISA.Fresher2025.Core\\MISA.Fresher2025.Core.csproj|solutionrelative:misa.fresher2025.core\\services\\baseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F215B224-DB59-4AE1-B2E7-D8BA3FA0FAE9}|MISA.Fresher2025.Core\\MISA.Fresher2025.Core.csproj|d:\\fresher misa\\day_final\\misa.fresher2025\\misa.fresher2025.core\\entities\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F215B224-DB59-4AE1-B2E7-D8BA3FA0FAE9}|MISA.Fresher2025.Core\\MISA.Fresher2025.Core.csproj|solutionrelative:misa.fresher2025.core\\entities\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6AE693B1-C1CB-49B1-BA31-5858CB548454}|MISA.Fresher2025.API\\MISA.Fresher2025.API.csproj|d:\\fresher misa\\day_final\\misa.fresher2025\\misa.fresher2025.api\\controllers\\misabasecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6AE693B1-C1CB-49B1-BA31-5858CB548454}|MISA.Fresher2025.API\\MISA.Fresher2025.API.csproj|solutionrelative:misa.fresher2025.api\\controllers\\misabasecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6AE693B1-C1CB-49B1-BA31-5858CB548454}|MISA.Fresher2025.API\\MISA.Fresher2025.API.csproj|d:\\fresher misa\\day_final\\misa.fresher2025\\misa.fresher2025.api\\controllers\\customercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6AE693B1-C1CB-49B1-BA31-5858CB548454}|MISA.Fresher2025.API\\MISA.Fresher2025.API.csproj|solutionrelative:misa.fresher2025.api\\controllers\\customercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F215B224-DB59-4AE1-B2E7-D8BA3FA0FAE9}|MISA.Fresher2025.Core\\MISA.Fresher2025.Core.csproj|d:\\fresher misa\\day_final\\misa.fresher2025\\misa.fresher2025.core\\misaattribute\\misarequired.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F215B224-DB59-4AE1-B2E7-D8BA3FA0FAE9}|MISA.Fresher2025.Core\\MISA.Fresher2025.Core.csproj|solutionrelative:misa.fresher2025.core\\misaattribute\\misarequired.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{45DE236F-11E7-468C-9ED8-44E42308484A}|MISA.Fresher2025.Infrastructure\\MISA.Fresher2025.Infrastructure.csproj|d:\\fresher misa\\day_final\\misa.fresher2025\\misa.fresher2025.infrastructure\\repository\\customerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{45DE236F-11E7-468C-9ED8-44E42308484A}|MISA.Fresher2025.Infrastructure\\MISA.Fresher2025.Infrastructure.csproj|solutionrelative:misa.fresher2025.infrastructure\\repository\\customerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F215B224-DB59-4AE1-B2E7-D8BA3FA0FAE9}|MISA.Fresher2025.Core\\MISA.Fresher2025.Core.csproj|d:\\fresher misa\\day_final\\misa.fresher2025\\misa.fresher2025.core\\services\\customerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F215B224-DB59-4AE1-B2E7-D8BA3FA0FAE9}|MISA.Fresher2025.Core\\MISA.Fresher2025.Core.csproj|solutionrelative:misa.fresher2025.core\\services\\customerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F215B224-DB59-4AE1-B2E7-D8BA3FA0FAE9}|MISA.Fresher2025.Core\\MISA.Fresher2025.Core.csproj|d:\\fresher misa\\day_final\\misa.fresher2025\\misa.fresher2025.core\\entities\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F215B224-DB59-4AE1-B2E7-D8BA3FA0FAE9}|MISA.Fresher2025.Core\\MISA.Fresher2025.Core.csproj|solutionrelative:misa.fresher2025.core\\entities\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F215B224-DB59-4AE1-B2E7-D8BA3FA0FAE9}|MISA.Fresher2025.Core\\MISA.Fresher2025.Core.csproj|d:\\fresher misa\\day_final\\misa.fresher2025\\misa.fresher2025.core\\interfaces\\services\\icustomerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F215B224-DB59-4AE1-B2E7-D8BA3FA0FAE9}|MISA.Fresher2025.Core\\MISA.Fresher2025.Core.csproj|solutionrelative:misa.fresher2025.core\\interfaces\\services\\icustomerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "CustomerController.cs",
+              "DocumentMoniker": "D:\\Fresher Misa\\Day_Final\\MISA.Fresher2025\\MISA.Fresher2025.API\\Controllers\\CustomerController.cs",
+              "RelativeDocumentMoniker": "MISA.Fresher2025.API\\Controllers\\CustomerController.cs",
+              "ToolTip": "D:\\Fresher Misa\\Day_Final\\MISA.Fresher2025\\MISA.Fresher2025.API\\Controllers\\CustomerController.cs",
+              "RelativeToolTip": "MISA.Fresher2025.API\\Controllers\\CustomerController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-12T03:40:19.912Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "MISABaseController.cs",
+              "DocumentMoniker": "D:\\Fresher Misa\\Day_Final\\MISA.Fresher2025\\MISA.Fresher2025.API\\Controllers\\MISABaseController.cs",
+              "RelativeDocumentMoniker": "MISA.Fresher2025.API\\Controllers\\MISABaseController.cs",
+              "ToolTip": "D:\\Fresher Misa\\Day_Final\\MISA.Fresher2025\\MISA.Fresher2025.API\\Controllers\\MISABaseController.cs",
+              "RelativeToolTip": "MISA.Fresher2025.API\\Controllers\\MISABaseController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-12T03:38:37.919Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Employee.cs",
+              "DocumentMoniker": "D:\\Fresher Misa\\Day_Final\\MISA.Fresher2025\\MISA.Fresher2025.Core\\Entities\\Employee.cs",
+              "RelativeDocumentMoniker": "MISA.Fresher2025.Core\\Entities\\Employee.cs",
+              "ToolTip": "D:\\Fresher Misa\\Day_Final\\MISA.Fresher2025\\MISA.Fresher2025.Core\\Entities\\Employee.cs",
+              "RelativeToolTip": "MISA.Fresher2025.Core\\Entities\\Employee.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-12T03:17:36.557Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "BaseService.cs",
+              "DocumentMoniker": "D:\\Fresher Misa\\Day_Final\\MISA.Fresher2025\\MISA.Fresher2025.Core\\Services\\BaseService.cs",
+              "RelativeDocumentMoniker": "MISA.Fresher2025.Core\\Services\\BaseService.cs",
+              "ToolTip": "D:\\Fresher Misa\\Day_Final\\MISA.Fresher2025\\MISA.Fresher2025.Core\\Services\\BaseService.cs",
+              "RelativeToolTip": "MISA.Fresher2025.Core\\Services\\BaseService.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAsAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-11T10:20:04.381Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IEmployeeService.cs",
+              "DocumentMoniker": "D:\\Fresher Misa\\Day_Final\\MISA.Fresher2025\\MISA.Fresher2025.Core\\Interfaces\\Services\\IEmployeeService.cs",
+              "RelativeDocumentMoniker": "MISA.Fresher2025.Core\\Interfaces\\Services\\IEmployeeService.cs",
+              "ToolTip": "D:\\Fresher Misa\\Day_Final\\MISA.Fresher2025\\MISA.Fresher2025.Core\\Interfaces\\Services\\IEmployeeService.cs",
+              "RelativeToolTip": "MISA.Fresher2025.Core\\Interfaces\\Services\\IEmployeeService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-11T10:17:52.921Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "EmployeeService.cs",
+              "DocumentMoniker": "D:\\Fresher Misa\\Day_Final\\MISA.Fresher2025\\MISA.Fresher2025.Core\\Services\\EmployeeService.cs",
+              "RelativeDocumentMoniker": "MISA.Fresher2025.Core\\Services\\EmployeeService.cs",
+              "ToolTip": "D:\\Fresher Misa\\Day_Final\\MISA.Fresher2025\\MISA.Fresher2025.Core\\Services\\EmployeeService.cs",
+              "RelativeToolTip": "MISA.Fresher2025.Core\\Services\\EmployeeService.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAQwB8AAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-11T10:15:47.739Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Fresher Misa\\Day_Final\\MISA.Fresher2025\\MISA.Fresher2025.API\\Program.cs",
+              "RelativeDocumentMoniker": "MISA.Fresher2025.API\\Program.cs",
+              "ToolTip": "D:\\Fresher Misa\\Day_Final\\MISA.Fresher2025\\MISA.Fresher2025.API\\Program.cs",
+              "RelativeToolTip": "MISA.Fresher2025.API\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-11T10:09:48.986Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "BaseRepository.cs",
+              "DocumentMoniker": "D:\\Fresher Misa\\Day_Final\\MISA.Fresher2025\\MISA.Fresher2025.Infrastructure\\Repository\\BaseRepository.cs",
+              "RelativeDocumentMoniker": "MISA.Fresher2025.Infrastructure\\Repository\\BaseRepository.cs",
+              "ToolTip": "D:\\Fresher Misa\\Day_Final\\MISA.Fresher2025\\MISA.Fresher2025.Infrastructure\\Repository\\BaseRepository.cs",
+              "RelativeToolTip": "MISA.Fresher2025.Infrastructure\\Repository\\BaseRepository.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAAAkwCgAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-11T10:02:22.002Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "CustomerRepository.cs",
+              "DocumentMoniker": "D:\\Fresher Misa\\Day_Final\\MISA.Fresher2025\\MISA.Fresher2025.Infrastructure\\Repository\\CustomerRepository.cs",
+              "RelativeDocumentMoniker": "MISA.Fresher2025.Infrastructure\\Repository\\CustomerRepository.cs",
+              "ToolTip": "D:\\Fresher Misa\\Day_Final\\MISA.Fresher2025\\MISA.Fresher2025.Infrastructure\\Repository\\CustomerRepository.cs",
+              "RelativeToolTip": "MISA.Fresher2025.Infrastructure\\Repository\\CustomerRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-11T10:02:23.392Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "MISARequired.cs",
+              "DocumentMoniker": "D:\\Fresher Misa\\Day_Final\\MISA.Fresher2025\\MISA.Fresher2025.Core\\MISAAttribute\\MISARequired.cs",
+              "RelativeDocumentMoniker": "MISA.Fresher2025.Core\\MISAAttribute\\MISARequired.cs",
+              "ToolTip": "D:\\Fresher Misa\\Day_Final\\MISA.Fresher2025\\MISA.Fresher2025.Core\\MISAAttribute\\MISARequired.cs",
+              "RelativeToolTip": "MISA.Fresher2025.Core\\MISAAttribute\\MISARequired.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAQwBAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-11T10:23:32.93Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ICustomerService.cs",
+              "DocumentMoniker": "D:\\Fresher Misa\\Day_Final\\MISA.Fresher2025\\MISA.Fresher2025.Core\\Interfaces\\Services\\ICustomerService.cs",
+              "RelativeDocumentMoniker": "MISA.Fresher2025.Core\\Interfaces\\Services\\ICustomerService.cs",
+              "ToolTip": "D:\\Fresher Misa\\Day_Final\\MISA.Fresher2025\\MISA.Fresher2025.Core\\Interfaces\\Services\\ICustomerService.cs",
+              "RelativeToolTip": "MISA.Fresher2025.Core\\Interfaces\\Services\\ICustomerService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-11T10:01:39.025Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Customer.cs",
+              "DocumentMoniker": "D:\\Fresher Misa\\Day_Final\\MISA.Fresher2025\\MISA.Fresher2025.Core\\Entities\\Customer.cs",
+              "RelativeDocumentMoniker": "MISA.Fresher2025.Core\\Entities\\Customer.cs",
+              "ToolTip": "D:\\Fresher Misa\\Day_Final\\MISA.Fresher2025\\MISA.Fresher2025.Core\\Entities\\Customer.cs",
+              "RelativeToolTip": "MISA.Fresher2025.Core\\Entities\\Customer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-11T10:21:35.514Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "CustomerService.cs",
+              "DocumentMoniker": "D:\\Fresher Misa\\Day_Final\\MISA.Fresher2025\\MISA.Fresher2025.Core\\Services\\CustomerService.cs",
+              "RelativeDocumentMoniker": "MISA.Fresher2025.Core\\Services\\CustomerService.cs",
+              "ToolTip": "D:\\Fresher Misa\\Day_Final\\MISA.Fresher2025\\MISA.Fresher2025.Core\\Services\\CustomerService.cs",
+              "RelativeToolTip": "MISA.Fresher2025.Core\\Services\\CustomerService.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABEAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-11T09:49:08.091Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
