@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MISA.Fresher2025.Core.Interfaces.Services
 {
-    public interface IEmployeeService: IBaseRepository<Employee>
+    public interface IEmployeeService: IBaseService<Employee>
     {
     }
 }

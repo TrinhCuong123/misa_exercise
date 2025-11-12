@@ -4,7 +4,7 @@ namespace MISA.Fresher2025.Core.Entities
 {
     public class Customer
     {
-        public Guid CustomerId { get; set; }
+        public string CustomerId { get; set; }
         [MISARequired("Thông tin không được để trống!")]
         public string CustomerCode { get; set; }
         public string CustomerName { get; set; }
@@ -14,7 +14,6 @@ namespace MISA.Fresher2025.Core.Entities
         public DateTime? CreateDate { get; set; }
         public string? CreateBy { get; set; }
         public DateTime? ModifiedDate { get; set; }
-        public DateTime? ModifiedBy { get; set; }
-        public string? Mobile { get; set; }
+        public string? ModifiedBy { get; set; }
     }
 }

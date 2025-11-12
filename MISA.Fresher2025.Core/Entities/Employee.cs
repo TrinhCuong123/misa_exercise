@@ -10,7 +10,7 @@ namespace MISA.Fresher2025.Core.Entities
     [MISATableName("employee")]
     public class Employee
     {
-        public Guid EmployeeId { get; set; }
+        public string EmployeeId { get; set; }
         [MISACheckDuplicate("Mã nhân viên không được trùng!")]
         [MISARequired("Vui lòng nhập mã nhân viên!")]
         [MISAColumName("emloyee_code")]
@@ -22,8 +22,7 @@ namespace MISA.Fresher2025.Core.Entities
         public DateTime? CreateDate { get; set; }
         public string? CreateBy { get; set; }
         public DateTime? ModifiedDate { get; set; }
-        public DateTime? ModifiedBy { get; set; }
-        public string? Mobile { get; set; }
+        public string? ModifiedBy { get; set; }
 
     }
 }

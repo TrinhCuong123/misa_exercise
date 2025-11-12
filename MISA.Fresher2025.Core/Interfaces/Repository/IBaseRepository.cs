@@ -9,9 +9,9 @@ namespace MISA.Fresher2025.Core.Interfaces.Repository
 {
     public interface IBaseRepository<T>
     {
-        List<T> Get();
-        T Insert(T entity);
-        T Delete(Guid entityId);
-        T Update(T entity);
+        public List<T> Get();
+        public T Insert(T entity);
+        public T Delete(Guid entityId);
+        public T Update(T entity);
     }
 }

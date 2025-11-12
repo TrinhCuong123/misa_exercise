@@ -154,11 +154,6 @@
           },
           "modifiedBy": {
             "type": "string",
-            "format": "date-time",
-            "nullable": true
-          },
-          "mobile": {
-            "type": "string",
             "nullable": true
           }
         },

@@ -7,13 +7,8 @@ using System.Threading.Tasks;
 
 namespace MISA.Fresher2025.Core.Interfaces.Services
 {
-    public interface ICustomerService
+    public interface ICustomerService: IBaseService<Customer>
     {
-        List<Customer> GetCustomers();
-        Customer Insert(Customer customer);
-        Customer Update(Customer customer);
-
-        void Import(List<Customer> customerList);
 
     }
 }

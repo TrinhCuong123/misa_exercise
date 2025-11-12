@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MISA.Fresher2025.Core.Entities;
-using MISA.Fresher2025.Core.Interfaces.Repository;
+using MISA.Fresher2025.Core.Interfaces.Services;
 
 namespace MISA.Fresher2025.API.Controllers
 {
@@ -18,10 +18,8 @@ namespace MISA.Fresher2025.API.Controllers
         //    return Ok();
         //}
 
-        ICustomerRepository _cusRepo;
-        public CustomerController(ICustomerRepository cusRepo): base(cusRepo)
+        public CustomerController(ICustomerService cusRepo): base(cusRepo)
         {
-            _cusRepo = cusRepo;
         }
     }
 }

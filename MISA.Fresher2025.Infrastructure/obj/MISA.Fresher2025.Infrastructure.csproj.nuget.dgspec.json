@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Fresher Misa\\Day_Final\\MISA.Fresher2025\\MISA.Fresher2025.Infrastructure\\MISA.Fresher2025.Infrastructure.csproj": {}
+    "d:\\Fresher Misa\\Day_Final\\MISA.Fresher2025\\MISA.Fresher2025.Infrastructure\\MISA.Fresher2025.Infrastructure.csproj": {}
   },
   "projects": {
-    "D:\\Fresher Misa\\Day_Final\\MISA.Fresher2025\\MISA.Fresher2025.Core\\MISA.Fresher2025.Core.csproj": {
+    "d:\\Fresher Misa\\Day_Final\\MISA.Fresher2025\\MISA.Fresher2025.Core\\MISA.Fresher2025.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Fresher Misa\\Day_Final\\MISA.Fresher2025\\MISA.Fresher2025.Core\\MISA.Fresher2025.Core.csproj",
+        "projectUniqueName": "d:\\Fresher Misa\\Day_Final\\MISA.Fresher2025\\MISA.Fresher2025.Core\\MISA.Fresher2025.Core.csproj",
         "projectName": "MISA.Fresher2025.Core",
-        "projectPath": "D:\\Fresher Misa\\Day_Final\\MISA.Fresher2025\\MISA.Fresher2025.Core\\MISA.Fresher2025.Core.csproj",
+        "projectPath": "d:\\Fresher Misa\\Day_Final\\MISA.Fresher2025\\MISA.Fresher2025.Core\\MISA.Fresher2025.Core.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\Fresher Misa\\Day_Final\\MISA.Fresher2025\\MISA.Fresher2025.Core\\obj\\",
+        "outputPath": "d:\\Fresher Misa\\Day_Final\\MISA.Fresher2025\\MISA.Fresher2025.Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -69,14 +69,14 @@
         }
       }
     },
-    "D:\\Fresher Misa\\Day_Final\\MISA.Fresher2025\\MISA.Fresher2025.Infrastructure\\MISA.Fresher2025.Infrastructure.csproj": {
+    "d:\\Fresher Misa\\Day_Final\\MISA.Fresher2025\\MISA.Fresher2025.Infrastructure\\MISA.Fresher2025.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Fresher Misa\\Day_Final\\MISA.Fresher2025\\MISA.Fresher2025.Infrastructure\\MISA.Fresher2025.Infrastructure.csproj",
+        "projectUniqueName": "d:\\Fresher Misa\\Day_Final\\MISA.Fresher2025\\MISA.Fresher2025.Infrastructure\\MISA.Fresher2025.Infrastructure.csproj",
         "projectName": "MISA.Fresher2025.Infrastructure",
-        "projectPath": "D:\\Fresher Misa\\Day_Final\\MISA.Fresher2025\\MISA.Fresher2025.Infrastructure\\MISA.Fresher2025.Infrastructure.csproj",
+        "projectPath": "d:\\Fresher Misa\\Day_Final\\MISA.Fresher2025\\MISA.Fresher2025.Infrastructure\\MISA.Fresher2025.Infrastructure.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\Fresher Misa\\Day_Final\\MISA.Fresher2025\\MISA.Fresher2025.Infrastructure\\obj\\",
+        "outputPath": "d:\\Fresher Misa\\Day_Final\\MISA.Fresher2025\\MISA.Fresher2025.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -97,8 +97,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\Fresher Misa\\Day_Final\\MISA.Fresher2025\\MISA.Fresher2025.Core\\MISA.Fresher2025.Core.csproj": {
-                "projectPath": "D:\\Fresher Misa\\Day_Final\\MISA.Fresher2025\\MISA.Fresher2025.Core\\MISA.Fresher2025.Core.csproj"
+              "d:\\Fresher Misa\\Day_Final\\MISA.Fresher2025\\MISA.Fresher2025.Core\\MISA.Fresher2025.Core.csproj": {
+                "projectPath": "d:\\Fresher Misa\\Day_Final\\MISA.Fresher2025\\MISA.Fresher2025.Core\\MISA.Fresher2025.Core.csproj"
               }
             }
           }
